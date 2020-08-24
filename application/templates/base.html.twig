@@ -10,8 +10,9 @@
     {% endblock %}
 </head>
 <body>
-    <p>{{ user }}</p>
+    {% include 'header.html.twig' %}
 
+    <p>{{user}}</p>
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->

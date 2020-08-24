@@ -45,15 +45,20 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
         // line 11
         echo "</head>
 <body>
-    <p>";
+    ";
         // line 13
+        $this->loadTemplate("header.html.twig", "base.html.twig", 13)->display($context);
+        // line 14
+        echo "    
+    <p>";
+        // line 15
         echo twig_escape_filter($this->env, ($context["user"] ?? null), "html", null, true);
         echo "</p>
 
     ";
-        // line 15
+        // line 17
         $this->displayBlock('scipt', $context, $blocks);
-        // line 22
+        // line 24
         echo "</body>
 </html>";
     }
@@ -71,11 +76,11 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
     ";
     }
 
-    // line 15
+    // line 17
     public function block_scipt($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 16
+        // line 18
         echo "        <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
@@ -96,7 +101,7 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 
     public function getDebugInfo()
     {
-        return array (  79 => 16,  75 => 15,  66 => 5,  62 => 4,  57 => 22,  55 => 15,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
+        return array (  84 => 18,  80 => 17,  71 => 5,  67 => 4,  62 => 24,  60 => 17,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -113,7 +118,9 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
     {% endblock %}
 </head>
 <body>
-    <p>{{ user }}</p>
+    {% include 'header.html.twig' %}
+    
+    <p>{{user}}</p>
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->
