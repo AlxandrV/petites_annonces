@@ -3,7 +3,8 @@
 require_once '../vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('../application/templates');
 $twig = new \Twig\Environment($loader, [
-    'cache' => false,
+
+    'cache' => '../application/cache',
     'debug' => true,
     ]);
     $twig->addExtension(new \Twig\Extension\DebugExtension());
