@@ -1,0 +1,19 @@
+{
+  "name": "petites_annonces",
+  "version": "1.0.0",
+  "description": "petites_annonces",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./public/css/style.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlxandrV/petites_annonces.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlxandrV/petites_annonces/issues"
+  },
+  "homepage": "https://github.com/AlxandrV/petites_annonces#readme"
+}

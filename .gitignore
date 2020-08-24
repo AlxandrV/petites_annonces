@@ -4,3 +4,5 @@ public/css/style.css
 public/css/style.css.map
 .vagrant/
 vagrantfile
+!application/cache/.gitkeep
+appilcation/cache/*

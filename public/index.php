@@ -1,5 +1,4 @@
 <?php
-
 require_once '../vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('../application/templates');
 $twig = new \Twig\Environment($loader, [
@@ -11,6 +10,6 @@ $twig = new \Twig\Environment($loader, [
 
 $template = $twig->load('base.html.twig');
 echo $template->render(array(
-    'user' => $user,
-    'exemple' => exemple(),
+    'user' => '$user',
+    // 'exemple' => exemple(),
 ));
