@@ -1,6 +1,7 @@
 <?php
 
 use App\Connexion;
+use App\Twig;
 
 $base = new Connexion();
 
@@ -44,5 +45,9 @@ $req = $base->q(
         array('maxPosts',$maxPosts,PDO::PARAM_INT)
         )
     );
-dump($req);
-// echo json_encode($req);
+
+    //render template
+    $twig = new Twig('posts.html.twig');
+    $twig->render([
+            'posts' => $req,
+        ]);
