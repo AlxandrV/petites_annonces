@@ -49,7 +49,7 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
         // line 13
         $this->loadTemplate("header.html.twig", "base.html.twig", 13)->display($context);
         // line 14
-        echo "    
+        echo "
     <p>";
         // line 15
         echo twig_escape_filter($this->env, ($context["user"] ?? null), "html", null, true);
@@ -119,7 +119,7 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 </head>
 <body>
     {% include 'header.html.twig' %}
-    
+
     <p>{{user}}</p>
 
     {% block scipt %}

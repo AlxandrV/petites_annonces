@@ -2,7 +2,10 @@
 require_once '../vendor/autoload.php';
 use App\Test;
 
-//Routeur
+//BASE DE DONNEES
+
+
+//ROUTEUR
 $uri = $_SERVER['REQUEST_URI'];
 $router = new AltoRouter();
 $router->setBasePath('../public');
@@ -38,6 +41,7 @@ $router->map('GET', '/post-[*:slug]-[i:id]', function ($slug, $id) {
 $router->map('GET', '/[*]', function () {
     echo "cette page n'existe pas";
 });
+
 $match = $router->match();
 if ($match !== null) {
     call_user_func_array($match['target'], $match['params']);
