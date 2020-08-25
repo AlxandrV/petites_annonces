@@ -43,13 +43,14 @@ $router->map('GET', '/del-[*:slug]-[i:id]', function ($slug, $id) {
 
 //DEBUG PAGE_________________________________________
 $router->map('GET', '/debug', function () {
-    $categories = new Categories();
+    // $categories = new Categories();
 
-    $twig = new Twig('debug.html.twig');
+    // $twig = new Twig('debug.html.twig');
 
-    $twig->render([
-            'categories' => $categories->data,
-        ]);
+    // $twig->render([
+    //         'categories' => $categories->data,
+    //     ]);
+    require_once '../application/class/PostList.php';
 });
 //___________________________________________________
 
