@@ -52,6 +52,7 @@ $router->map('GET', '/[*]', function () {
 });
 
 $match = $router->match();
+
 if ($match !== null) {
     call_user_func_array($match['target'], $match['params']);
 }
