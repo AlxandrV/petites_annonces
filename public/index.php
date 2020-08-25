@@ -1,12 +1,9 @@
 <?php
 require_once '../vendor/autoload.php';
 use App\Test;
-<<<<<<< HEAD
-=======
 
 //BASE DE DONNEES
 
->>>>>>> cb177ca21620a28be0ef1abfdef0599feaa13200
 
 //ROUTEUR
 $uri = $_SERVER['REQUEST_URI'];
@@ -43,10 +40,6 @@ $router->map('GET', '/[*]', function () {
     echo "cette page n'existe pas";
 });
 
-<<<<<<< HEAD
-// echo getcwd();
-=======
->>>>>>> cb177ca21620a28be0ef1abfdef0599feaa13200
 $match = $router->match();
 if ($match !== null) {
     call_user_func_array($match['target'], $match['params']);
