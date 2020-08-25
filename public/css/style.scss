@@ -1,3 +1,42 @@
-p{
-    color: red;
+body{
+    width: 100 vw;
+    height: 100vh;
+    margin: 0;
+    background: rgb(148,150,158);
+    background: linear-gradient(155deg, rgba(148,150,158,1) 0%, rgba(48,52,63,1) 31%);
+    background-repeat: no-repeat;
+
+    #first{
+        box-sizing: border-box;
+        width: 100vw;
+        height: 80px;
+        padding: 0 225px;
+        margin: auto 0;
+
+        #logo{
+            width: 50px;
+            height: 50px;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        button{
+            background-color: #fafaff;
+            border-radius: 20px;
+        }
+    }
+    
+    #secondary{
+        input{
+            width: 50%;
+        }
+        
+        div > button{
+            background-color: #D9DD92;
+            color: #30343F;
+        }
+    }
 }
