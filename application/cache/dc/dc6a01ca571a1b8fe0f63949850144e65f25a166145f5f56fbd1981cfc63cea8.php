@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* content.html.twig */
-class __TwigTemplate_e7bc217f480c34514f1fca6f69eb0963e14a9dff5f34696e59fe90b2b2a351ca extends Template
+/* product.html.twig */
+class __TwigTemplate_9ca87c9017867a6d29bf9a85f00f110769141af33389b9c8a34bd78c693529c1 extends Template
 {
     private $source;
     private $macros = [];
@@ -34,33 +34,25 @@ class __TwigTemplate_e7bc217f480c34514f1fca6f69eb0963e14a9dff5f34696e59fe90b2b2a
     {
         $macros = $this->macros;
         // line 1
-        echo "<section class=\"container\">
-    ";
-        // line 2
-        $this->loadTemplate("product.html.twig", "content.html.twig", 2)->display($context);
-        // line 3
-        echo "</section>";
+        echo "<div class=\"product\">
+    <div><img src=\"../../public/media/computer.png\" alt=\"illustration\" width=\"256\" height=\"256\"></div>
+</div>";
     }
 
     public function getTemplateName()
     {
-        return "content.html.twig";
-    }
-
-    public function isTraitable()
-    {
-        return false;
+        return "product.html.twig";
     }
 
     public function getDebugInfo()
     {
-        return array (  42 => 3,  40 => 2,  37 => 1,);
+        return array (  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<section class=\"container\">
-    {% include 'product.html.twig' %}
-</section>", "content.html.twig", "/var/www/html/application/templates/content.html.twig");
+        return new Source("<div class=\"product\">
+    <div><img src=\"../../public/media/computer.png\" alt=\"illustration\" width=\"256\" height=\"256\"></div>
+</div>", "product.html.twig", "/var/www/html/application/templates/product.html.twig");
     }
 }
