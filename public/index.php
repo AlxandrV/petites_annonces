@@ -45,3 +45,5 @@ $match = $router->match();
 if ($match !== null) {
     call_user_func_array($match['target'], $match['params']);
 }
+// dump($router);
+// dump($match);
