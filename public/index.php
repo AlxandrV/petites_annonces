@@ -1,8 +1,10 @@
 <?php
 require_once '../vendor/autoload.php';
+
+use App\Categories;
 use App\Test;
 
-//BASE DE DONNEES
+
 
 
 //ROUTEUR
@@ -31,13 +33,20 @@ $router->map('GET', '/', function () {
 
 
 
+//DEBUG PAGE_________________________________________
+$router->map('GET', '/debug', function () {
 
-$router->map('GET', '/contact', function () {
-    echo 'page de contact';
+    $test = new Categories();
+    dump($test->data[0]->name);
+
 });
+//___________________________________________________
+
+
 $router->map('GET', '/post-[*:slug]-[i:id]', function ($slug, $id) {
     echo "je suis sur l'annonce: $slug qui a l'index: $id";
 });
+
 $router->map('GET', '/[*]', function () {
     echo "cette page n'existe pas";
 });
@@ -46,5 +55,3 @@ $match = $router->match();
 if ($match !== null) {
     call_user_func_array($match['target'], $match['params']);
 }
-// dump($router);
-// dump($match);

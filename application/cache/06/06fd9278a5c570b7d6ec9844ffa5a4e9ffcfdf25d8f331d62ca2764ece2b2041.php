@@ -50,23 +50,15 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
         $this->loadTemplate("header.html.twig", "base.html.twig", 13)->display($context);
         // line 14
         echo "
-<<<<<<< HEAD
     ";
+        // line 15
+        $this->loadTemplate("content.html.twig", "base.html.twig", 15)->display($context);
         // line 16
-        $this->loadTemplate("content.html.twig", "base.html.twig", 16)->display($context);
-        // line 17
         echo "    
-=======
-    <p>";
-        // line 19
-        echo twig_escape_filter($this->env, ($context["user"] ?? null), "html", null, true);
-        echo "</p>
-
->>>>>>> 3237c38a895fda20feadfed2670a29e1f2041499
     ";
-        // line 22
+        // line 17
         $this->displayBlock('scipt', $context, $blocks);
-        // line 29
+        // line 24
         echo "</body>
 </html>";
     }
@@ -84,11 +76,11 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
     ";
     }
 
-    // line 22
+    // line 17
     public function block_scipt($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 23
+        // line 18
         echo "        <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
@@ -109,7 +101,7 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 
     public function getDebugInfo()
     {
-        return array (  92 => 23,  88 => 22,  79 => 5,  75 => 4,  70 => 29,  68 => 22,  62 => 19,  58 => 17,  56 => 16,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
+        return array (  84 => 18,  80 => 17,  71 => 5,  67 => 4,  62 => 24,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -128,13 +120,8 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 <body>
     {% include 'header.html.twig' %}
 
-<<<<<<< HEAD
     {% include 'content.html.twig' %}
     
-=======
-    <p>{{user}}</p>
-
->>>>>>> 3237c38a895fda20feadfed2670a29e1f2041499
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
