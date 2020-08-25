@@ -8,7 +8,7 @@ use App\Test;
 //ROUTEUR
 $uri = $_SERVER['REQUEST_URI'];
 $router = new AltoRouter();
-$router->setBasePath('../public');
+$router->setBasePath('');
 
 $router->map('GET', '/', function () {
     $loader = new \Twig\Loader\FilesystemLoader('../application/templates');
@@ -46,3 +46,5 @@ $match = $router->match();
 if ($match !== null) {
     call_user_func_array($match['target'], $match['params']);
 }
+// dump($router);
+// dump($match);
