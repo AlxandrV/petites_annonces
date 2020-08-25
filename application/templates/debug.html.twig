@@ -10,9 +10,10 @@
     {% endblock %}
 </head>
 <body>
-    {% include 'header.html.twig' %}
-
-    {% include 'content.html.twig' %}
+    {% for category in categories %}
+    <p>ID : {{ category.id }}</p>
+    <p>NAME : {{ category.name }}</p>
+    {% endfor %}
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->

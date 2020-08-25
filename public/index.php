@@ -2,7 +2,7 @@
 require_once '../vendor/autoload.php';
 
 use App\Categories;
-use App\Test;
+use App\Twig;
 
 
 
@@ -23,25 +23,8 @@ $router->map('GET', '/', function () {
     $template = $twig->load('base.html.twig');
 
 
-    $test= new test();
-
-    echo $template->render([
-        'user' => $test->user,
-        'hello' => $test->hello(),
-    ]);
+    echo $template->render([]);
 });
-
-
-
-//DEBUG PAGE_________________________________________
-$router->map('GET', '/debug', function () {
-
-    $test = new Categories();
-    dump($test->data[0]->name);
-
-});
-//___________________________________________________
-
 
 $router->map('GET', '/post-[*:slug]-[i:id]', function ($slug, $id) {
     echo "je suis sur l'annonce: $slug qui a l'index: $id";
@@ -50,6 +33,18 @@ $router->map('GET', '/post-[*:slug]-[i:id]', function ($slug, $id) {
 $router->map('GET', '/[*]', function () {
     echo "cette page n'existe pas";
 });
+
+//DEBUG PAGE_________________________________________
+$router->map('GET', '/debug', function () {
+    $categories = new Categories();
+
+    $twig = new Twig('debug.html.twig');
+
+    $twig->render([
+            'categories' => $categories->data,
+        ]);
+});
+//___________________________________________________
 
 $match = $router->match();
 
