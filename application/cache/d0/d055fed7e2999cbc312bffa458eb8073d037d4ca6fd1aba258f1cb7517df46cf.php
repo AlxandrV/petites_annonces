@@ -45,15 +45,20 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
         // line 11
         echo "</head>
 <body>
-    <p>";
+    ";
         // line 13
-        echo twig_escape_filter($this->env, ($context["user"] ?? null), "html", null, true);
-        echo "</p>
-    
+        $this->loadTemplate("header.html.twig", "base.html.twig", 13)->display($context);
+        // line 14
+        echo "
     ";
         // line 15
+        $this->loadTemplate("content.html.twig", "base.html.twig", 15)->display($context);
+        // line 16
+        echo "    
+    ";
+        // line 17
         $this->displayBlock('scipt', $context, $blocks);
-        // line 22
+        // line 24
         echo "</body>
 </html>";
     }
@@ -66,16 +71,16 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
         echo "        <meta charset=\"UTF-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <title>Document</title>
-        <link rel=\"stylesheet\" href=\"../../public/css/style.css\">
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
+        <link rel=\"stylesheet\" href=\"../../public/css/style.css\">
     ";
     }
 
-    // line 15
+    // line 17
     public function block_scipt($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 16
+        // line 18
         echo "        <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
@@ -96,7 +101,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
 
     public function getDebugInfo()
     {
-        return array (  79 => 16,  75 => 15,  66 => 5,  62 => 4,  57 => 22,  55 => 15,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
+        return array (  84 => 18,  80 => 17,  71 => 5,  67 => 4,  62 => 24,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -108,12 +113,14 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
         <meta charset=\"UTF-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <title>Document</title>
-        <link rel=\"stylesheet\" href=\"../../public/css/style.css\">
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
+        <link rel=\"stylesheet\" href=\"../../public/css/style.css\">
     {% endblock %}
 </head>
 <body>
-    <p>{{ user }}</p>
+    {% include 'header.html.twig' %}
+
+    {% include 'content.html.twig' %}
     
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->
