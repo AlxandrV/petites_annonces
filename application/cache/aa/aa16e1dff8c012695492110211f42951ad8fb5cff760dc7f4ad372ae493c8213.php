@@ -36,7 +36,7 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
         // line 1
         echo "<header>
     <div id=\"first\" class=\"d-flex justify-content-between align-items-center\">
-        <div id=\"logo\"><img src=\"../../public/media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
+        <div id=\"logo\"><img src=\"media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
         <button class=\"btn\">Poster une annonce</button>
     </div>
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
@@ -84,7 +84,7 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
     {
         return new Source("<header>
     <div id=\"first\" class=\"d-flex justify-content-between align-items-center\">
-        <div id=\"logo\"><img src=\"../../public/media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
+        <div id=\"logo\"><img src=\"media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
         <button class=\"btn\">Poster une annonce</button>
     </div>
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">

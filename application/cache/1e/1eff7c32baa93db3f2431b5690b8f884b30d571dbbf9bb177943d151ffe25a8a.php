@@ -35,7 +35,7 @@ class __TwigTemplate_d65876a31213f3a2c40dd4bb1bacacbe6df7f04b438105b62116422169f
         $macros = $this->macros;
         // line 1
         echo "<div class=\"product\">
-    <div><img src=\"../../public/media/computer.png\" alt=\"illustration\" width=\"256\" height=\"256\"></div>
+    <div><img src=\"media/computer.png\" alt=\"illustration\" width=\"256\" height=\"256\"></div>
 </div>";
     }
 
@@ -52,7 +52,7 @@ class __TwigTemplate_d65876a31213f3a2c40dd4bb1bacacbe6df7f04b438105b62116422169f
     public function getSourceContext()
     {
         return new Source("<div class=\"product\">
-    <div><img src=\"../../public/media/computer.png\" alt=\"illustration\" width=\"256\" height=\"256\"></div>
+    <div><img src=\"media/computer.png\" alt=\"illustration\" width=\"256\" height=\"256\"></div>
 </div>", "product.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\product.html.twig");
     }
 }
