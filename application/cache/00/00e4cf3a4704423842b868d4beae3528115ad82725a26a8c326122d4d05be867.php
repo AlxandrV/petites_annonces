@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* content.html.twig */
-class __TwigTemplate_e7bc217f480c34514f1fca6f69eb0963e14a9dff5f34696e59fe90b2b2a351ca extends Template
+/* modal_pdf.html.twig */
+class __TwigTemplate_09ca79d75ffc976b3a96be774ef28465ce9ee44cb41d8ba9f002ffafb999676e extends Template
 {
     private $source;
     private $macros = [];
@@ -34,14 +34,12 @@ class __TwigTemplate_e7bc217f480c34514f1fca6f69eb0963e14a9dff5f34696e59fe90b2b2a
     {
         $macros = $this->macros;
         // line 1
-        echo "<section class=\"container d-flex flex-wrap justify-content-between\">
-
-</section>";
+        echo "<div class=\"modalSection active\"></div>";
     }
 
     public function getTemplateName()
     {
-        return "content.html.twig";
+        return "modal_pdf.html.twig";
     }
 
     public function getDebugInfo()
@@ -51,8 +49,6 @@ class __TwigTemplate_e7bc217f480c34514f1fca6f69eb0963e14a9dff5f34696e59fe90b2b2a
 
     public function getSourceContext()
     {
-        return new Source("<section class=\"container d-flex flex-wrap justify-content-between\">
-
-</section>", "content.html.twig", "/var/www/html/application/templates/content.html.twig");
+        return new Source("<div class=\"modalSection active\"></div>", "modal_pdf.html.twig", "/var/www/html/application/templates/modal_pdf.html.twig");
     }
 }

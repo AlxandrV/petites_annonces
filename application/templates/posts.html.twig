@@ -1,13 +1,22 @@
 {% for post in posts %}
-<div class="product">
-    <div><img src="media/computer.png" alt="illustration" width="256" height="256"></div>
+<div class="product ">
+    <div class="illustration">
+        <img src="media/default.jpg" alt="illustration" width="600" height="398">
+        <div class="categorie">{{post.category_name}}</div>
+    </div>
 
-    <p><strong>id: </strong>{{post.id}}</p><br>
-    <p><strong>title: </strong>{{post.title}}</p><br>
-    <p><strong>description: </strong>{{post.description}}</p><br>
+    <div class="detailPost">
+        <div class="titlePost">
+            <p><strong>{{post.title}}</strong></p>
+        </div>
+        <p class="description">{{post.description}}</p>
+
+    </div>
+
+    <!-- <p><strong>id: </strong>{{post.id}}</p><br>
     <p><strong>picture: </strong>{{post.picture}}</p><br>
     <p><strong>date_creation: </strong>{{post.date_creation}}</p><br>
-    <br><hr>
+    <br><hr> -->
               
 </div>
 {% endfor %}
