@@ -60,11 +60,11 @@ $router->map('GET', '/debug', function () {
 //___________________________________________________
 
 //AJAX PostList_________________________________________
-$router->map('GET', '/ajax-postList', function(){
+$router->map('POST', '/ajax-postList', function(){
     \App\PostList::postList();
 });
 //AJAX Post_________________________________________
-$router->map('GET', '/ajax-post-add', function(){
+$router->map('POST', '/ajax-post-add', function(){
     \App\Post::Add();
 });
 //404 Page __________________________________
