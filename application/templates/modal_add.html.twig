@@ -42,11 +42,11 @@
                     </div>
 
                     <div class="modalPicture">
-                        <div id="imgPicture" class="sectionPicture">
-                            <img src="media/default.jpg" alt="illustration" width="600" height="398">
+                        <div class="sectionPicture">
+                            <img id="imgPicture" src="media/default.jpg" alt="illustration" width="600" height="398">
                         </div>
                         <label for="file" class="labelFile">Ajouter une image</label>
-                        <input type="file" class="buttonFile" name="picture" id="file">
+                        <input type="file" class="buttonFile" name="picture" id="file" onchange="handleFiles(this.files)">
                     </div>
                 </div>
 

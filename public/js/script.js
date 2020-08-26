@@ -43,13 +43,12 @@ addPost.addEventListener('click', () => {
 });
 
 // Upload image modal d'ajout ____________________________________________________
-const inputFile = document.getElementById('file');
+function handleFiles(file) {
+    let picture = file[0];
+    let img = document.getElementById('imgPicture');
+    img.file = picture;
 
-console.log(inputFile);
-let pictureFile = inputFile.value;
-console.log(pictureFile);
-
-let imgPicture = document.getElementById('imgPicture');
-imgPicture.setAttribute('src', pictureFile);
-
-console.log(imgPicture);
+    let reader = new FileReader();
+    reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+    reader.readAsDataURL(picture);
+}
