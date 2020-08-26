@@ -105,9 +105,25 @@ body{
         height: 100vh;
         background-color: rgba(0, 0, 0, .5);
         transition: transform 1s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &.active{
             transform: translateX(-100%);
+        }
+
+        form{
+            width: 50%;
+            box-sizing: border-box;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            
+            .modalDescription, .modalPost{
+                display: flex;
+                justify-content: space-between;                
+            }
         }
     }
 }

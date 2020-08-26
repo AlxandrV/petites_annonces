@@ -12,8 +12,8 @@
 //     };
 // });
 
-let content = document.getElementsByTagName('SECTION');
-console.log(content);
+// AJAX chargement initial des annonces ___________________________________________
+const content = document.getElementsByTagName('SECTION');
 
 addEventListener('load', function loadProducts(){
     let xhr = new XMLHttpRequest();
@@ -27,4 +27,17 @@ addEventListener('load', function loadProducts(){
             content[0].innerHTML = xhr.responseText;
         }
     };
+});
+
+// Affichage du modal d'ajout d'annonce ______________________________________________
+const addPost = document.getElementById('addPost');
+
+addPost.addEventListener('click', () => {
+    const modalAdd = document.getElementById('modalAdd');
+    modalAdd.classList.add('active');
+
+    // Cache le modal lors d'un click en dehors de la fenêtre
+    modalAdd.addEventListener('click', () => {
+        modalAdd.classList.remove('active');
+    });
 });

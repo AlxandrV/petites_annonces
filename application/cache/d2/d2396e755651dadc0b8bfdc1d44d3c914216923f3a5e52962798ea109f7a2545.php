@@ -37,7 +37,7 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
         echo "<header>
     <div id=\"first\" class=\"d-flex justify-content-between align-items-center\">
         <div id=\"logo\"><img src=\"media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
-        <button class=\"btn\">Poster une annonce</button>
+        <button id=\"addPost\" class=\"btn\">Poster une annonce</button>
     </div>
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
         <input type=\"text\" name=\"search\" id=\"search\" class=\"form-control\" placeholder=\"Rechercher\">
@@ -85,7 +85,7 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
         return new Source("<header>
     <div id=\"first\" class=\"d-flex justify-content-between align-items-center\">
         <div id=\"logo\"><img src=\"media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
-        <button class=\"btn\">Poster une annonce</button>
+        <button id=\"addPost\" class=\"btn\">Poster une annonce</button>
     </div>
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
         <input type=\"text\" name=\"search\" id=\"search\" class=\"form-control\" placeholder=\"Rechercher\">

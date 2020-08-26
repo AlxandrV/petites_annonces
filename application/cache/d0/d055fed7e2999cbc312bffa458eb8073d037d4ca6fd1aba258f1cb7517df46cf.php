@@ -57,13 +57,13 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
         echo "
     ";
         // line 17
-        $this->loadTemplate("modal_pdf.html.twig", "base.html.twig", 17)->display($context);
+        $this->loadTemplate("modal_add.html.twig", "base.html.twig", 17)->display($context);
         // line 18
         echo "
     ";
         // line 19
         $this->displayBlock('scipt', $context, $blocks);
-        // line 26
+        // line 27
         echo "</body>
 </html>";
     }
@@ -91,6 +91,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
         <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\" integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\"></script>
         <script src=\"../../public/js/script.js\"></script>
+        <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
     ";
     }
 
@@ -106,7 +107,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
 
     public function getDebugInfo()
     {
-        return array (  89 => 20,  85 => 19,  76 => 5,  72 => 4,  67 => 26,  65 => 19,  62 => 18,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
+        return array (  89 => 20,  85 => 19,  76 => 5,  72 => 4,  67 => 27,  65 => 19,  62 => 18,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -127,7 +128,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
 
     {% include 'content.html.twig' %}
 
-    {% include 'modal_pdf.html.twig' %}
+    {% include 'modal_add.html.twig' %}
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->
@@ -135,6 +136,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
         <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\" integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\"></script>
         <script src=\"../../public/js/script.js\"></script>
+        <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
     {% endblock %}
 </body>
 </html>", "base.html.twig", "/var/www/html/application/templates/base.html.twig");
