@@ -54,10 +54,15 @@ $router->map('GET', '/debug', function () {
 });
 //___________________________________________________
 
+//AJAX PostList_________________________________________
+$router->map('POST', '/ajax-postList', function(){
+    \App\PostList::postList();
+});
 //404 Page __________________________________
 $router->map('GET', '/[*]', function () {
     echo "cette page n'existe pas";
 });
+
 
 
 
