@@ -36,7 +36,7 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
         // line 1
         echo "<header>
     <div id=\"first\" class=\"d-flex justify-content-between align-items-center\">
-        <div id=\"logo\"><img src=\"../../public/media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
+        <div id=\"logo\"><img src=\"media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
         <button class=\"btn\">Poster une annonce</button>
     </div>
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
@@ -44,10 +44,22 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
         <div class=\"btn-group\">
             <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
             <div class=\"dropdown-menu dropdown-menu-right\">
-              <button class=\"dropdown-item\" type=\"button\">Catégorie1</button>
-              <button class=\"dropdown-item\" type=\"button\">Catégorie2</button>
-              <button class=\"dropdown-item\" type=\"button\">Catégorie3</button>
-            </div>
+              ";
+        // line 11
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 12
+            echo "              <button class=\"dropdown-item\" type=\"button\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 12), "html", null, true);
+            echo "</button>
+              ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 14
+        echo "            </div>
           </div>
     </div>
 </header>";
@@ -58,16 +70,21 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
         return "header.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  37 => 1,);
+        return array (  62 => 14,  53 => 12,  49 => 11,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<header>
     <div id=\"first\" class=\"d-flex justify-content-between align-items-center\">
-        <div id=\"logo\"><img src=\"../../public/media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
+        <div id=\"logo\"><img src=\"media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
         <button class=\"btn\">Poster une annonce</button>
     </div>
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
@@ -75,9 +92,9 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
         <div class=\"btn-group\">
             <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
             <div class=\"dropdown-menu dropdown-menu-right\">
-              <button class=\"dropdown-item\" type=\"button\">Catégorie1</button>
-              <button class=\"dropdown-item\" type=\"button\">Catégorie2</button>
-              <button class=\"dropdown-item\" type=\"button\">Catégorie3</button>
+              {% for category in categories %}
+              <button class=\"dropdown-item\" type=\"button\">{{ category.name }}</button>
+              {% endfor %}
             </div>
           </div>
     </div>

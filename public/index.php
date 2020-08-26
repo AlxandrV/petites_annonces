@@ -1,8 +1,10 @@
 <?php
 require_once '../vendor/autoload.php';
-use App\Test;
 
-//BASE DE DONNEES
+use App\Categories;
+use App\Twig;
+
+
 
 
 //ROUTEUR
@@ -10,40 +12,57 @@ $uri = $_SERVER['REQUEST_URI'];
 $router = new AltoRouter();
 $router->setBasePath('');
 
+//Home Page __________________________________
 $router->map('GET', '/', function () {
-    $loader = new \Twig\Loader\FilesystemLoader('../application/templates');
-    $twig = new \Twig\Environment($loader, [
-        'cache' => '../application/cache',
-        'debug' => true,
-    ]);
-    $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-    $template = $twig->load('base.html.twig');
+    //categories request
+    $categories = new Categories();
 
-
-    $test= new test();
-
-    echo $template->render([
-        'user' => $test->user,
-        'hello' => $test->hello(),
-    ]);
+    //render template
+    $twig = new Twig('base.html.twig');
+    $twig->render([
+            'categories' => $categories->data,
+        ]);
 });
 
 
-$router->map('GET', '/contact', function () {
-    echo 'page de contact';
-});
+//Posts Pages __________________________________
 $router->map('GET', '/post-[*:slug]-[i:id]', function ($slug, $id) {
-    echo "je suis sur l'annonce: $slug qui a l'index: $id";
+    echo "Visualisation de l'annonce: $slug qui a l'index: $id";
 });
+
+//Edit Pages __________________________________
+$router->map('GET', '/edit-[*:slug]-[i:id]', function ($slug, $id) {
+    echo "Edition de l'annonce: $slug qui a l'index: $id";
+});
+
+//Delete Pages __________________________________
+$router->map('GET', '/del-[*:slug]-[i:id]', function ($slug, $id) {
+    echo "Suppression de l'annonce: $slug qui a l'index: $id";
+});
+
+//DEBUG PAGE_________________________________________
+$router->map('GET', '/debug', function () {
+    // $categories = new Categories();
+
+    // $twig = new Twig('debug.html.twig');
+
+    // $twig->render([
+    //         'categories' => $categories->data,
+    //     ]);
+    require_once '../application/class/PostList.php';
+});
+//___________________________________________________
+
+//404 Page __________________________________
 $router->map('GET', '/[*]', function () {
     echo "cette page n'existe pas";
 });
+
+
 
 $match = $router->match();
 
 if ($match !== null) {
     call_user_func_array($match['target'], $match['params']);
 }
-// dump($router);
-// dump($match);

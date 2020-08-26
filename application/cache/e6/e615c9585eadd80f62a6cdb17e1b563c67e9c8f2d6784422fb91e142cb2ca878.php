@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* base.html.twig */
-class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9ebf228 extends Template
+/* debug.html.twig */
+class __TwigTemplate_a2d0b70fb8cac0e673e67d4ec1d693ec2902528e10977a20c32c0417797d606a extends Template
 {
     private $source;
     private $macros = [];
@@ -47,18 +47,28 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 <body>
     ";
         // line 13
-        $this->loadTemplate("header.html.twig", "base.html.twig", 13)->display($context);
-        // line 14
-        echo "
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 14
+            echo "    <p>ID : ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 14), "html", null, true);
+            echo "</p>
+    <p>NAME : ";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 15), "html", null, true);
+            echo "</p>
     ";
-        // line 15
-        $this->loadTemplate("content.html.twig", "base.html.twig", 15)->display($context);
-        // line 16
-        echo "
-    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 17
+        echo "
+    ";
+        // line 18
         $this->displayBlock('scipt', $context, $blocks);
-        // line 24
+        // line 25
         echo "</body>
 </html>";
     }
@@ -76,11 +86,11 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
     ";
     }
 
-    // line 17
+    // line 18
     public function block_scipt($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 18
+        // line 19
         echo "        <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
@@ -91,7 +101,7 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 
     public function getTemplateName()
     {
-        return "base.html.twig";
+        return "debug.html.twig";
     }
 
     public function isTraitable()
@@ -101,7 +111,7 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 
     public function getDebugInfo()
     {
-        return array (  84 => 18,  80 => 17,  71 => 5,  67 => 4,  62 => 24,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
+        return array (  94 => 19,  90 => 18,  81 => 5,  77 => 4,  72 => 25,  70 => 18,  67 => 17,  59 => 15,  54 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -118,9 +128,10 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
     {% endblock %}
 </head>
 <body>
-    {% include 'header.html.twig' %}
-
-    {% include 'content.html.twig' %}
+    {% for category in categories %}
+    <p>ID : {{ category.id }}</p>
+    <p>NAME : {{ category.name }}</p>
+    {% endfor %}
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->
@@ -130,6 +141,6 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
         <script src=\"../../public/js/script.js\"></script>
     {% endblock %}
 </body>
-</html>", "base.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\base.html.twig");
+</html>", "debug.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\debug.html.twig");
     }
 }

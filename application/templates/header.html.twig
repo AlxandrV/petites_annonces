@@ -1,6 +1,6 @@
 <header>
     <div id="first" class="d-flex justify-content-between align-items-center">
-        <div id="logo"><img src="../../public/media/computer.png" alt="Logo" width="256" height="256"></div>
+        <div id="logo"><img src="media/computer.png" alt="Logo" width="256" height="256"></div>
         <button class="btn">Poster une annonce</button>
     </div>
     <div id="secondary" class="container d-flex justify-content-around">
@@ -8,9 +8,9 @@
         <div class="btn-group">
             <button type="button" id="listCategorie" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégorie</button>
             <div class="dropdown-menu dropdown-menu-right">
-              <button class="dropdown-item" type="button">Catégorie1</button>
-              <button class="dropdown-item" type="button">Catégorie2</button>
-              <button class="dropdown-item" type="button">Catégorie3</button>
+              {% for category in categories %}
+              <button class="dropdown-item" type="button">{{ category.name }}</button>
+              {% endfor %}
             </div>
           </div>
     </div>
