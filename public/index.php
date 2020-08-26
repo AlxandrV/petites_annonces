@@ -32,18 +32,18 @@ $router->map('GET', '/post-[*:slug]-[i:id]', function ($slug, $id) {
 });
 
 //Validate Pages __________________________________
-$router->map('GET', '/valid-[*:slug]-[i:id]', function ($slug, $id) {
-    echo "Validation de l'annonce: $slug qui a l'index: $id";
+$router->map('GET', '/valid-[*:slug]-[i:unique_id]', function ($slug, $unique_id) {
+    echo "Validation de l'annonce: $slug qui a l'index: $unique_id";
 });
 
 //Edit Pages __________________________________
-$router->map('GET', '/edit-[*:slug]-[i:id]', function ($slug, $id) {
-    echo "Edition de l'annonce: $slug qui a l'index: $id";
+$router->map('GET', '/edit-[*:slug]-[i:unique_id]', function ($slug, $unique_id) {
+    echo "Edition de l'annonce: $slug qui a l'index: $unique_id";
 });
 
 //Delete Pages __________________________________
-$router->map('GET', '/del-[*:slug]-[i:id]', function ($slug, $id) {
-    echo "Suppression de l'annonce: $slug qui a l'index: $id";
+$router->map('GET', '/del-[*:slug]-[i:unique_id]', function ($slug, $unique_id) {
+    echo "Suppression de l'annonce: $slug qui a l'index: $unique_id";
 });
 
 //DEBUG PAGE_________________________________________
@@ -63,9 +63,17 @@ $router->map('GET', '/debug', function () {
 $router->map('POST', '/ajax-postList', function(){
     \App\PostList::postList();
 });
-//AJAX Post_________________________________________
+//AJAX Post Add_________________________________________
 $router->map('POST', '/ajax-post-add', function(){
     \App\Post::Add();
+});
+//AJAX Post Update_________________________________________
+$router->map('POST', '/ajax-post-update', function(){
+    \App\Post::Update();
+});
+//AJAX Post Delete_________________________________________
+$router->map('GET', '/ajax-post-delete', function(){
+    \App\Post::Delete();
 });
 //404 Page __________________________________
 $router->map('GET', '/[*]', function () {

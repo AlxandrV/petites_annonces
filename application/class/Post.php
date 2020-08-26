@@ -12,7 +12,7 @@ class Post{
         $validation= (new self)->Validation();
 
 
-        if($validation !=="OK"){
+        if($validation ==="OK"){
 
             //set picture
             if(isset($_POST['picture']) && !empty($_POST['picture'])){
@@ -32,7 +32,7 @@ class Post{
             //Connexion
             $base = new Connexion();
 
-            //
+            //get category_id
             $req = $base->q("SELECT `id` FROM `category` WHERE `name` = :category",
             array(array('category',$category,\PDO::PARAM_STR)));
             $category_id = $req[0]->id;
@@ -69,7 +69,7 @@ class Post{
         $validation= (new self)->Validation();
 
 
-        if($validation !=="OK"){
+        if($validation ==="OK"){
 
             //set picture
             if(isset($_POST['picture']) && !empty($_POST['picture'])){
@@ -77,52 +77,41 @@ class Post{
             }else{
                 $picture = "placeholder.jpg";
             }
-            //get values
-            // $title = $_POST['title'];
-            // $descript = $_POST['description'];
-            // $user_mail  = $_POST['user_mail'];
-            // $user_n  = $_POST['user_name'];
-            // $user_firstname  = $_POST['user_firstname'];
-            // $user_phone  = $_POST['user_phone'];
-            // $category  = $_POST['category'];
+            if(isset($_POST['unique_id']) && !empty($_POST['unique_id'])){
+                $unique_id = $_POST['unique_id'];
+            }else{
+                echo json_encode("Cette annonce n'existe pas");
+                return;
+            }
+            // get values
+            $title = $_POST['title'];
+            $descript = $_POST['description'];
+            $category  = $_POST['category'];
 
-            //debug
-            $title = 'mon titre';
-            $descript ='ma description';
-            $user_mail  = 'jojo@gmail.com';
-            $user_n  = 'Doe';
-            $user_firstname  = 'John';
-            $user_phone  = '06 42 32 22 12';
-            $category  = 'Immobilier';
 
             //Connexion
             $base = new Connexion();
 
-            //
+            //get category_id
             $req = $base->q("SELECT `id` FROM `category` WHERE `name` = :category",
             array(array('category',$category,\PDO::PARAM_STR)));
             $category_id = $req[0]->id;
 
-            //set unique id
-            $unique_id=bin2hex(openssl_random_pseudo_bytes(18));
+            //set date_validation
+            $date_validation=date("Y-m-d");
+            $is_validated = 1;
 
-            //set date_creation
-            $date_creation=date("Y-m-d");
-
-            //ADD POST
-            $base->qw('INSERT INTO post(`unique_id`, `title`, `description`, `picture`, `date_creation`, `category_id`, `user_mail`, `user_name`, `user_firstname`, `user_phone`)
-                      VALUES (:unique_id, :title, :descript, :picture, :date_creation, :category_id, :user_mail, :user_n, :user_firstname, :user_phone)',
+            //UPDATE POST
+            $base->qw('UPDATE post SET `title` = :title, `description` = :descript, `category_id` = :category_id, `is_validated` = :is_validated, `date_validation` = :date_validation, `picture` = :picture
+                      WHERE `unique_id` = :unique_id',
             array(
                 array('unique_id',$unique_id,\PDO::PARAM_STR),
                 array('title',$title,\PDO::PARAM_STR),
                 array('descript',$descript,\PDO::PARAM_STR),
-                array('picture',$picture,\PDO::PARAM_STR),
-                array('date_creation',$date_creation,\PDO::PARAM_STR),
                 array('category_id',$category_id,\PDO::PARAM_INT),
-                array('user_mail',$user_mail,\PDO::PARAM_STR),
-                array('user_n',$user_n,\PDO::PARAM_STR),
-                array('user_firstname',$user_firstname,\PDO::PARAM_STR),
-                array('user_phone',$user_phone,\PDO::PARAM_STR)
+                array('is_validated',$is_validated,\PDO::PARAM_INT),
+                array('date_validation',$date_validation,\PDO::PARAM_STR),
+                array('picture',$picture,\PDO::PARAM_STR)
                 )
             );
         }
@@ -130,7 +119,22 @@ class Post{
     }
 
     public static function Delete(){
-        //hello
+
+        if(isset($_POST['unique_id']) && !empty($_POST['unique_id'])){
+            $unique_id = $_POST['unique_id'];
+        }else{
+            echo json_encode("Cette annonce n'existe pas");
+            return;
+        }
+
+        //Connexion
+        $base = new Connexion();
+
+        //DELETE POST
+        $base->qw('DELETE FROM post WHERE unique_id = :unique_id',
+            array(array('unique_id',$unique_id,\PDO::PARAM_STR)));
+
+        echo json_encode('OK');
     }
 
 
