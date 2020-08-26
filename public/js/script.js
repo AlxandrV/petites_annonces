@@ -38,6 +38,18 @@ addPost.addEventListener('click', () => {
 
     // Cache le modal lors d'un click en dehors de la fenêtre
     modalAdd.addEventListener('click', () => {
-        modalAdd.classList.remove('active');
+        // modalAdd.classList.remove('active');
     });
 });
+
+// Upload image modal d'ajout ____________________________________________________
+const inputFile = document.getElementById('file');
+
+console.log(inputFile);
+let pictureFile = inputFile.value;
+console.log(pictureFile);
+
+let imgPicture = document.getElementById('imgPicture');
+imgPicture.setAttribute('src', pictureFile);
+
+console.log(imgPicture);

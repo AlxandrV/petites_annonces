@@ -1,3 +1,7 @@
+:root{
+    --primary-color: rgb(217, 221, 146);
+}
+
 body{
     width: 100vw;
     min-height: 100vh;
@@ -38,7 +42,7 @@ body{
         }
 
         div > button{
-            background-color: #D9DD92;
+            background-color: var(--primary-color);
             color: #30343F;
         }
     }
@@ -59,7 +63,7 @@ body{
                 height: 45%;
                 overflow: hidden;
                 border-radius: 5px 5px 0 0;
-                border-bottom: 1px solid rgb(217, 221, 146);
+                border-bottom: 1px solid var(--primary-color);
                 position: relative;
 
                 img{
@@ -83,7 +87,7 @@ body{
                 height: 55%;
                 
                 .titlePost{
-                    border-bottom: 1px dashed #D9DD92;
+                    border-bottom: 1px dashed var(--primary-color);
                     height: 30%;
                 }
 
@@ -123,6 +127,50 @@ body{
             .modalDescription, .modalPost{
                 display: flex;
                 justify-content: space-between;                
+            }
+
+            .userDescription{
+                margin-right: 20px;
+            }
+
+            .postDescription > div:first-child{
+                display: flex;
+                justify-content: space-between;   
+
+                .modalPicture{
+                    width: 250px;
+                    height: auto;
+                    margin-left: 20px;
+                    margin-top: 20px;
+
+                    .sectionPicture{
+                        overflow: hidden;
+                        width: 100%;
+                        height: 150px;
+                        margin-bottom: 10px;
+
+                        img{
+                            width: auto;
+                            height: 100%;
+                        }
+                    }
+
+                    .labelFile{
+                        background-color: var(--primary-color);
+                        padding: 3px 10px;
+                        border-radius: 10px;
+                        border: solid 2px rgb(93, 95, 62);
+                        cursor: pointer;
+                        transition: .3s ease-in-out;
+                    }
+
+                    .labelFile:hover{
+                        background-color: rgb(128, 131, 83);
+                    }
+                    .buttonFile{
+                        display: none;
+                    }
+                }
             }
         }
     }
