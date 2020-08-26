@@ -8,7 +8,7 @@ class Connexion {
 
 	public function __construct(){
 		$this->login = 'root';
-		$this->pass = 'root';
+		$this->pass = '';
 		$this->db = 'projet_annonces';
 		$this->connect();
 	}

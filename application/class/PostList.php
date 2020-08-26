@@ -40,9 +40,9 @@ $req = $base->q(
                 ORDER BY p.date_creation
                 LIMIT :maxPosts OFFSET :pageStart",
     array(
-        array('search',$search,PDO::PARAM_STR),
-        array('pageStart',$pageStart,PDO::PARAM_INT),
-        array('maxPosts',$maxPosts,PDO::PARAM_INT)
+        array('search',$search,\PDO::PARAM_STR),
+        array('pageStart',$pageStart,\PDO::PARAM_INT),
+        array('maxPosts',$maxPosts,\PDO::PARAM_INT)
         )
     );
 

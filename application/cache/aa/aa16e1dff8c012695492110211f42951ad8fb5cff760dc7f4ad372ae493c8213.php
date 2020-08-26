@@ -42,7 +42,7 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
         <input type=\"text\" name=\"search\" id=\"search\" class=\"form-control\" placeholder=\"Rechercher\">
         <div class=\"btn-group\">
-            <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
+            <button type=\"button\" id=\"listCategorie\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
             <div class=\"dropdown-menu dropdown-menu-right\">
               ";
         // line 11
@@ -90,7 +90,7 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
         <input type=\"text\" name=\"search\" id=\"search\" class=\"form-control\" placeholder=\"Rechercher\">
         <div class=\"btn-group\">
-            <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
+            <button type=\"button\" id=\"listCategorie\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
             <div class=\"dropdown-menu dropdown-menu-right\">
               {% for category in categories %}
               <button class=\"dropdown-item\" type=\"button\">{{ category.name }}</button>
