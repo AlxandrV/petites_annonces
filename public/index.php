@@ -64,9 +64,9 @@ $router->map('POST', '/ajax-postList', function(){
     \App\PostList::postList();
 });
 //AJAX Post Add_________________________________________
-// $router->map('POST', '/ajax-post-add', function(){
-//     \App\Post::Add();
-// });
+$router->map('POST', '/ajax-post-add', function(){
+    \App\Post::Add();
+});
 //AJAX Post Update_________________________________________
 $router->map('GET', '/ajax-post-update', function(){
     \App\Post::Update();
