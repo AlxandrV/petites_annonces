@@ -17,7 +17,7 @@ console.log(content);
 
 addEventListener('load', function loadProducts(){
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'ajax/PostList.php', true);
+    xhr.open('POST', 'ajax-postList', true);
     // xhr.send("search=" + search + "&pageStart=" + page);
     xhr.send();
 
