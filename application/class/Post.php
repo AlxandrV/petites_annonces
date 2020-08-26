@@ -119,7 +119,20 @@ class Post{
     }
 
     public static function Delete(){
-        //hello
+
+        if(isset($_POST['unique_id']) && !empty($_POST['unique_id'])){
+            $unique_id = $_POST['unique_id'];
+        }else{
+            echo json_encode("Cette annonce n'existe pas");
+            return;
+        }
+
+        //Connexion
+        $base = new Connexion();
+
+        //DELETE POST
+        $base->qw('DELETE FROM post WHERE unique_id = :unique_id',
+            array(array('unique_id',$unique_id,\PDO::PARAM_STR)));
     }
 
 

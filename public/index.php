@@ -68,8 +68,12 @@ $router->map('POST', '/ajax-post-add', function(){
     \App\Post::Add();
 });
 //AJAX Post Update_________________________________________
-$router->map('GET', '/ajax-post-update', function(){
+$router->map('POST', '/ajax-post-update', function(){
     \App\Post::Update();
+});
+//AJAX Post Delete_________________________________________
+$router->map('GET', '/ajax-post-delete', function(){
+    \App\Post::Delete();
 });
 //404 Page __________________________________
 $router->map('GET', '/[*]', function () {
