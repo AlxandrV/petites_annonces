@@ -35,11 +35,8 @@ class __TwigTemplate_3c2bf998d7ca25847ffef07c5e78e8f3a97aad12df52e53a0a067b56719
         $macros = $this->macros;
         // line 1
         echo "<section class=\"container\">
-    ";
-        // line 2
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 2)->display($context);
-        // line 3
-        echo "</section>";
+
+</section>";
     }
 
     public function getTemplateName()
@@ -47,20 +44,15 @@ class __TwigTemplate_3c2bf998d7ca25847ffef07c5e78e8f3a97aad12df52e53a0a067b56719
         return "content.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  42 => 3,  40 => 2,  37 => 1,);
+        return array (  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<section class=\"container\">
-    {% include 'posts.html.twig' %}
+
 </section>", "content.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\content.html.twig");
     }
 }
