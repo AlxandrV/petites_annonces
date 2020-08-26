@@ -2,9 +2,11 @@ body{
     width: 100vw;
     min-height: 100vh;
     margin: 0;
+    overflow-x: hidden;
     background: rgb(148,150,158);
     background: linear-gradient(155deg, rgba(148,150,158,1) 0%, rgba(48,52,63,1) 31%);
     background-repeat: no-repeat;
+    position: relative;
 
     #first{
         box-sizing: border-box;
@@ -48,18 +50,64 @@ body{
             height: 330px;
             margin-bottom: 20px;
             border-radius: 5px;
-            div{
-                background-color: red;
+            box-sizing: border-box;
+            overflow: hidden;
+            cursor: pointer;
+
+            .illustration{
                 width: 100%;
                 height: 45%;
-                overflow-y: hidden;
+                overflow: hidden;
                 border-radius: 5px 5px 0 0;
+                border-bottom: 1px solid rgb(217, 221, 146);
+                position: relative;
 
                 img{
-                    width: 100%;
-                    height: auto;
+                    width: auto;
+                    height: 100%;
+                }
+
+                .categorie{
+                    background-color: rgba(217, 221, 146, .7);
+                    padding: 3px 10px;
+                    border-radius: 10px;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
                 }
             }
+
+            .detailPost{
+                box-sizing: border-box;
+                padding: 5px;
+                height: 55%;
+                
+                .titlePost{
+                    border-bottom: 1px dashed #D9DD92;
+                    height: 30%;
+                }
+
+                .description{
+                    height: 70%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .modalAdd{
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .5);
+        transition: transform 1s ease-in-out;
+
+        &.active{
+            transform: translateX(-100%);
         }
     }
 }

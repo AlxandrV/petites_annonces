@@ -24,8 +24,7 @@ addEventListener('load', function loadProducts(){
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             console.log('lol');
-            console.log(xhr.responseText);
+            content[0].innerHTML = xhr.responseText;
         }
     };
-}
-)
+});
