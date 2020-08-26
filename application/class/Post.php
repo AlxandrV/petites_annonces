@@ -133,6 +133,8 @@ class Post{
         //DELETE POST
         $base->qw('DELETE FROM post WHERE unique_id = :unique_id',
             array(array('unique_id',$unique_id,\PDO::PARAM_STR)));
+
+        echo json_encode('OK');
     }
 
 
