@@ -57,8 +57,13 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
         echo "
     ";
         // line 17
+        $this->loadTemplate("modal_add.html.twig", "base.html.twig", 17)->display($context);
+        // line 18
+        echo "
+    ";
+        // line 19
         $this->displayBlock('scipt', $context, $blocks);
-        // line 24
+        // line 27
         echo "</body>
 </html>";
     }
@@ -76,16 +81,17 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
     ";
     }
 
-    // line 17
+    // line 19
     public function block_scipt($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 18
+        // line 20
         echo "        <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
         <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\" integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\"></script>
-        <script src=\"js/script.js\"></script>
+        <script src=\"../../public/js/script.js\"></script>
+        <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
     ";
     }
 
@@ -101,7 +107,7 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 
     public function getDebugInfo()
     {
-        return array (  84 => 18,  80 => 17,  71 => 5,  67 => 4,  62 => 24,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
+        return array (  89 => 20,  85 => 19,  76 => 5,  72 => 4,  67 => 27,  65 => 19,  62 => 18,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -122,12 +128,15 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 
     {% include 'content.html.twig' %}
 
+    {% include 'modal_add.html.twig' %}
+
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
         <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\" integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\"></script>
-        <script src=\"js/script.js\"></script>
+        <script src=\"../../public/js/script.js\"></script>
+        <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
     {% endblock %}
 </body>
 </html>", "base.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\base.html.twig");

@@ -35,37 +35,6 @@ class __TwigTemplate_3c2bf998d7ca25847ffef07c5e78e8f3a97aad12df52e53a0a067b56719
         $macros = $this->macros;
         // line 1
         echo "<section class=\"container d-flex flex-wrap justify-content-between\">
-    <!-- ";
-        // line 2
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 2)->display($context);
-        // line 3
-        echo "    ";
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 3)->display($context);
-        // line 4
-        echo "    ";
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 4)->display($context);
-        // line 5
-        echo "    ";
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 5)->display($context);
-        // line 6
-        echo "    ";
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 6)->display($context);
-        // line 7
-        echo "    ";
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 7)->display($context);
-        // line 8
-        echo "    ";
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 8)->display($context);
-        // line 9
-        echo "    ";
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 9)->display($context);
-        // line 10
-        echo "    ";
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 10)->display($context);
-        // line 11
-        echo "    ";
-        $this->loadTemplate("posts.html.twig", "content.html.twig", 11)->display($context);
-        echo " -->
 
 </section>";
     }
@@ -75,29 +44,14 @@ class __TwigTemplate_3c2bf998d7ca25847ffef07c5e78e8f3a97aad12df52e53a0a067b56719
         return "content.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  66 => 11,  63 => 10,  60 => 9,  57 => 8,  54 => 7,  51 => 6,  48 => 5,  45 => 4,  42 => 3,  40 => 2,  37 => 1,);
+        return array (  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<section class=\"container d-flex flex-wrap justify-content-between\">
-    <!-- {% include 'posts.html.twig' %}
-    {% include 'posts.html.twig' %}
-    {% include 'posts.html.twig' %}
-    {% include 'posts.html.twig' %}
-    {% include 'posts.html.twig' %}
-    {% include 'posts.html.twig' %}
-    {% include 'posts.html.twig' %}
-    {% include 'posts.html.twig' %}
-    {% include 'posts.html.twig' %}
-    {% include 'posts.html.twig' %} -->
 
 </section>", "content.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\content.html.twig");
     }
