@@ -1,13 +1,13 @@
+{% for post in posts %}
 <div class="product">
     <div><img src="media/computer.png" alt="illustration" width="256" height="256"></div>
 
-    {% for post in posts %}
-              <p><strong>id: </strong>{{post.id}}</p><br>
-              <p><strong>title: </strong>{{post.title}}</p><br>
-              <p><strong>description: </strong>{{post.description}}</p><br>
-              <p><strong>picture: </strong>{{post.picture}}</p><br>
-              <p><strong>date_creation: </strong>{{post.date_creation}}</p><br>
-              <br><hr>
-    {% endfor %}
-
+    <p><strong>id: </strong>{{post.id}}</p><br>
+    <p><strong>title: </strong>{{post.title}}</p><br>
+    <p><strong>description: </strong>{{post.description}}</p><br>
+    <p><strong>picture: </strong>{{post.picture}}</p><br>
+    <p><strong>date_creation: </strong>{{post.date_creation}}</p><br>
+    <br><hr>
+              
 </div>
+{% endfor %}
