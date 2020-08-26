@@ -54,7 +54,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
         // line 15
         $this->loadTemplate("content.html.twig", "base.html.twig", 15)->display($context);
         // line 16
-        echo "    
+        echo "
     ";
         // line 17
         $this->displayBlock('scipt', $context, $blocks);
@@ -121,7 +121,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
     {% include 'header.html.twig' %}
 
     {% include 'content.html.twig' %}
-    
+
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
