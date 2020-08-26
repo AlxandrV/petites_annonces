@@ -31,6 +31,11 @@ $router->map('GET', '/post-[*:slug]-[i:id]', function ($slug, $id) {
     echo "Visualisation de l'annonce: $slug qui a l'index: $id";
 });
 
+//Validate Pages __________________________________
+$router->map('GET', '/valid-[*:slug]-[i:id]', function ($slug, $id) {
+    echo "Edition de l'annonce: $slug qui a l'index: $id";
+});
+
 //Edit Pages __________________________________
 $router->map('GET', '/edit-[*:slug]-[i:id]', function ($slug, $id) {
     echo "Edition de l'annonce: $slug qui a l'index: $id";

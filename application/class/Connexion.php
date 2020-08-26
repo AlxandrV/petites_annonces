@@ -44,6 +44,4 @@ class Connexion {
 		$stmt->execute();
 		return $stmt->fetchAll();
 	}
-
-
 }

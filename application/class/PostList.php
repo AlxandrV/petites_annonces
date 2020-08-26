@@ -46,8 +46,8 @@ $req = $base->q(
         )
     );
 
-    //render template
-    $twig = new Twig('posts.html.twig');
-    $twig->render([
-            'posts' => $req,
-        ]);
+//render template
+$twig = new Twig('posts.html.twig');
+$twig->render([
+        'posts' => $req,
+    ]);
