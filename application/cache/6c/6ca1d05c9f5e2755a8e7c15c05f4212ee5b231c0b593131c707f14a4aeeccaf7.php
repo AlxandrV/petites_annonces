@@ -87,7 +87,7 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
         
                         <div class=\"form-group\">
                             <label for=\"title\">Titre de votre annonce</label>
-                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\">
+                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" placeholder=\"TItre de l'annoce\">
                         </div>
                     </div>
 
@@ -102,14 +102,14 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
 
                 <div class=\"form-group\">
                     <label for=\"description\">Descriptif de votre annonce</label>
-                    <textarea class=\"form-control\" id=\"title\" name=\"title\" rows=\"8\" cols=\"40\"></textarea>
+                    <textarea class=\"form-control\" id=\"title\" name=\"title\" rows=\"8\" cols=\"40\" placeholder=\"Descriptif de l'annonce\"></textarea>
                 </div>
             </div>
         </div>
         
         <div class=\"modalPost\">
             <div class=\"g-recaptcha end\" data-sitekey=\"public_key\"></div>    
-            <input class=\"btn btn-primary\" type=\"button\" value=\"Poster l'annonce\">    
+            <input class=\"btn btn-primary\" type=\"submit\" value=\"Poster l'annonce\">    
         </div>
     </form>
 </div>";
@@ -171,7 +171,7 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
         
                         <div class=\"form-group\">
                             <label for=\"title\">Titre de votre annonce</label>
-                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\">
+                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" placeholder=\"TItre de l'annoce\">
                         </div>
                     </div>
 
@@ -186,14 +186,14 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
 
                 <div class=\"form-group\">
                     <label for=\"description\">Descriptif de votre annonce</label>
-                    <textarea class=\"form-control\" id=\"title\" name=\"title\" rows=\"8\" cols=\"40\"></textarea>
+                    <textarea class=\"form-control\" id=\"title\" name=\"title\" rows=\"8\" cols=\"40\" placeholder=\"Descriptif de l'annonce\"></textarea>
                 </div>
             </div>
         </div>
         
         <div class=\"modalPost\">
             <div class=\"g-recaptcha end\" data-sitekey=\"public_key\"></div>    
-            <input class=\"btn btn-primary\" type=\"button\" value=\"Poster l'annonce\">    
+            <input class=\"btn btn-primary\" type=\"submit\" value=\"Poster l'annonce\">    
         </div>
     </form>
 </div>", "modal_add.html.twig", "/var/www/html/application/templates/modal_add.html.twig");

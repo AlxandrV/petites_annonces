@@ -23,7 +23,6 @@ addEventListener('load', function loadProducts(){
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log('lol');
             content[0].innerHTML = xhr.responseText;
         }
     };
@@ -42,7 +41,7 @@ addPost.addEventListener('click', () => {
     });
 });
 
-// Upload image modal d'ajout ____________________________________________________
+// Display image modal d'ajout ____________________________________________________
 function handleFiles(file) {
     let picture = file[0];
     let img = document.getElementById('imgPicture');
@@ -52,3 +51,23 @@ function handleFiles(file) {
     reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
     reader.readAsDataURL(picture);
 }
+
+// Ajax formulaire d'ajout ____________________________________________________
+const form = document.getElementById('modalAdd').children[0];
+console.log(form);
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    console.log('on est dedans');
+    let data = new FormData;
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'ajax-post-add', true);
+    xhr.send(data);
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log('lol');
+        }
+    };
+});
