@@ -1,6 +1,6 @@
 body{
-    width: 100 vw;
-    height: 100vh;
+    width: 100vw;
+    min-height: 100vh;
     margin: 0;
     background: rgb(148,150,158);
     background: linear-gradient(155deg, rgba(148,150,158,1) 0%, rgba(48,52,63,1) 31%);
@@ -30,6 +30,7 @@ body{
     }
 
     #secondary{
+        margin-bottom: 60px;
         input{
             width: 50%;
         }
@@ -37,6 +38,23 @@ body{
         div > button{
             background-color: #D9DD92;
             color: #30343F;
+        }
+    }
+
+    section{
+        .product{
+            background-color: #fff;
+            width: 18%;
+            height: 330px;
+            margin-bottom: 20px;
+            div{
+                background-color: red;
+                width: 100%;
+                height: 45%;
+                img{
+                    width: 100%;
+                }
+            }
         }
     }
 }

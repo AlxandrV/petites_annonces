@@ -42,7 +42,7 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
         <input type=\"text\" name=\"search\" id=\"search\" class=\"form-control\" placeholder=\"Rechercher\">
         <div class=\"btn-group\">
-            <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
+            <button type=\"button\" id=\"listCategorie\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
             <div class=\"dropdown-menu dropdown-menu-right\">
               <button class=\"dropdown-item\" type=\"button\">Catégorie1</button>
               <button class=\"dropdown-item\" type=\"button\">Catégorie2</button>
@@ -73,7 +73,7 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
         <input type=\"text\" name=\"search\" id=\"search\" class=\"form-control\" placeholder=\"Rechercher\">
         <div class=\"btn-group\">
-            <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
+            <button type=\"button\" id=\"listCategorie\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
             <div class=\"dropdown-menu dropdown-menu-right\">
               <button class=\"dropdown-item\" type=\"button\">Catégorie1</button>
               <button class=\"dropdown-item\" type=\"button\">Catégorie2</button>
