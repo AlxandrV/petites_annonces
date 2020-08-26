@@ -33,7 +33,7 @@ $router->map('GET', '/post-[*:slug]-[i:id]', function ($slug, $id) {
 
 //Validate Pages __________________________________
 $router->map('GET', '/valid-[*:slug]-[i:id]', function ($slug, $id) {
-    echo "Edition de l'annonce: $slug qui a l'index: $id";
+    echo "Validation de l'annonce: $slug qui a l'index: $id";
 });
 
 //Edit Pages __________________________________
@@ -60,8 +60,12 @@ $router->map('GET', '/debug', function () {
 //___________________________________________________
 
 //AJAX PostList_________________________________________
-$router->map('POST', '/ajax-postList', function(){
+$router->map('GET', '/ajax-postList', function(){
     \App\PostList::postList();
+});
+//AJAX Post_________________________________________
+$router->map('GET', '/ajax-post-add', function(){
+    \App\Post::Add();
 });
 //404 Page __________________________________
 $router->map('GET', '/[*]', function () {
