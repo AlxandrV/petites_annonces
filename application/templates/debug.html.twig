@@ -10,10 +10,9 @@
     {% endblock %}
 </head>
 <body>
-    {% for category in categories %}
-    <p>ID : {{ category.id }}</p>
-    <p>NAME : {{ category.name }}</p>
-    {% endfor %}
+    <p>Title : {{ post.title }}</p>
+    <p>Description: : {{ post.description }}</p>
+    <p>Picture: : {{ post.picture }}</p>
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->

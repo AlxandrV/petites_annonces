@@ -2,12 +2,10 @@
 require_once '../vendor/autoload.php';
 
 use App\Categories;
+use App\ShowPost;
 use App\Twig;
 
-
-
-
-//ROUTEUR
+//ROUTER
 $uri = $_SERVER['REQUEST_URI'];
 $router = new AltoRouter();
 $router->setBasePath('');
@@ -25,25 +23,34 @@ $router->map('GET', '/', function () {
         ]);
 });
 
-
-//Posts Pages __________________________________
-$router->map('GET', '/post-[*:slug]-[i:id]', function ($slug, $id) {
-    echo "Visualisation de l'annonce: $slug qui a l'index: $id";
-});
-
 //Validate Pages __________________________________
-$router->map('GET', '/valid-[*:slug]-[i:unique_id]', function ($slug, $unique_id) {
-    echo "Validation de l'annonce: $slug qui a l'index: $unique_id";
+$router->map('GET', '/valid-[:unique_id]', function ($unique_id) {
+    $showPost = new ShowPost($unique_id);
+    //render template
+    $twig = new Twig('debug.html.twig');
+    $twig->render([
+            'post' => $showPost->data[0],
+        ]);
 });
 
 //Edit Pages __________________________________
-$router->map('GET', '/edit-[*:slug]-[i:unique_id]', function ($slug, $unique_id) {
-    echo "Edition de l'annonce: $slug qui a l'index: $unique_id";
+$router->map('GET', '/edit-[:unique_id]', function ($unique_id) {
+    $showPost = new ShowPost($unique_id);
+    //render template
+    $twig = new Twig('debug.html.twig');
+    $twig->render([
+            'post' => $showPost->data[0],
+        ]);
 });
 
 //Delete Pages __________________________________
-$router->map('GET', '/del-[*:slug]-[i:unique_id]', function ($slug, $unique_id) {
-    echo "Suppression de l'annonce: $slug qui a l'index: $unique_id";
+$router->map('GET', '/del-[:unique_id]', function ($unique_id) {
+    $showPost = new ShowPost($unique_id);
+    //render template
+    $twig = new Twig('debug.html.twig');
+    $twig->render([
+            'post' => $showPost->data[0],
+        ]);
 });
 
 //DEBUG PAGE_________________________________________
@@ -72,8 +79,12 @@ $router->map('POST', '/ajax-post-update', function(){
     \App\Post::Update();
 });
 //AJAX Post Delete_________________________________________
-$router->map('GET', '/ajax-post-delete', function(){
+$router->map('POST', '/ajax-post-delete', function(){
     \App\Post::Delete();
+});
+//AJAX Post Show_________________________________________
+$router->map('GET', '/ajax-post-show', function(){
+    \App\Post::ShowPost();
 });
 //404 Page __________________________________
 $router->map('GET', '/[*]', function () {
@@ -82,7 +93,7 @@ $router->map('GET', '/[*]', function () {
 
 
 
-
+// Launch Routing
 $match = $router->match();
 
 if ($match !== null) {
