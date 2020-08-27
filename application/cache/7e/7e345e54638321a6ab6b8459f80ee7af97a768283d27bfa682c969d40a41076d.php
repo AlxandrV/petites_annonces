@@ -94,10 +94,10 @@ class __TwigTemplate_9ccc42cbef9711322c578f4f8b4f52800f090d2ea84e874342c4d475b75
 
                     <div class=\"modalPicture\">
                         <div class=\"sectionPicture\">
-                            <img id=\"imgPicture\" src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+                            <img id=\"imgPicture\" src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
                         </div>
                         <label for=\"file\" class=\"labelFile\">Ajouter une image</label>
-                        <input type=\"file\" class=\"buttonFile\" id=\"file\" onchange=\"handleFiles(this.files)\" value=\"default.jpg\" name=\"file\">
+                        <input type=\"file\" class=\"buttonFile\" id=\"file\" onchange=\"handleFiles(this.files)\" value=\"placeholder.jpg\" name=\"file\">
                     </div>
                 </div>
 
@@ -179,10 +179,10 @@ class __TwigTemplate_9ccc42cbef9711322c578f4f8b4f52800f090d2ea84e874342c4d475b75
 
                     <div class=\"modalPicture\">
                         <div class=\"sectionPicture\">
-                            <img id=\"imgPicture\" src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+                            <img id=\"imgPicture\" src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
                         </div>
                         <label for=\"file\" class=\"labelFile\">Ajouter une image</label>
-                        <input type=\"file\" class=\"buttonFile\" id=\"file\" onchange=\"handleFiles(this.files)\" value=\"default.jpg\" name=\"file\">
+                        <input type=\"file\" class=\"buttonFile\" id=\"file\" onchange=\"handleFiles(this.files)\" value=\"placeholder.jpg\" name=\"file\">
                     </div>
                 </div>
 

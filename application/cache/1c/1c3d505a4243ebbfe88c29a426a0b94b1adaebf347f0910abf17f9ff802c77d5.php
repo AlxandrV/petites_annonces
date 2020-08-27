@@ -40,7 +40,7 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
             // line 2
             echo "<div class=\"product\">
     <div class=\"illustration\">
-        <img src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+        <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
         <div class=\"categorie\">";
             // line 5
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "category_name", [], "any", false, false, false, 5), "html", null, true);
@@ -107,7 +107,7 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
         return new Source("{% for post in posts %}
 <div class=\"product\">
     <div class=\"illustration\">
-        <img src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+        <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
         <div class=\"categorie\">{{post.category_name}}</div>
     </div>
 
