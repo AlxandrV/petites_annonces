@@ -30,9 +30,9 @@ addEventListener('load', function loadProducts(){
 
 // Affichage du modal d'ajout d'annonce ______________________________________________
 const addPost = document.getElementById('addPost');
+const modalAdd = document.getElementById('modalAdd');
 
 addPost.addEventListener('click', () => {
-    const modalAdd = document.getElementById('modalAdd');
     modalAdd.classList.add('active');
 
     // Cache le modal lors d'un click en dehors de la fenêtre
@@ -45,6 +45,9 @@ addPost.addEventListener('click', () => {
 function handleFiles(file) {
     let picture = file[0];
     let img = document.getElementById('imgPicture');
+    let valuePicture = document.getElementById('valuePicture');
+
+    valuePicture.setAttribute('value', picture.name);
     img.file = picture;
 
     let reader = new FileReader();
@@ -59,14 +62,16 @@ console.log(form);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    console.log('on est dedans');
-    let data = new FormData;
+    let data = new FormData(form);
     let xhr = new XMLHttpRequest();
+
     xhr.open('POST', 'ajax-post-add', true);
     xhr.send(data);
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+                        
+            modalAdd.classList.remove('active');
             console.log('lol');
         }
     };
