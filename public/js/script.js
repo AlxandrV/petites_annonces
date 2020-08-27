@@ -77,23 +77,12 @@ form.addEventListener('submit', (e) => {
             modalAdd.classList.remove('active');
             form.reset();
 
-<<<<<<< HEAD
             // let names = ['name', 'firstName', 'email', 'phone', 'title', 'valuePicture', 'description'];
             // names.forEach((name) => {
             //     let inputName = document.getElementById(name);
 
             //     inputName.value = "";
             // });
-=======
-            let names = ['name', 'firstName', 'email', 'phone', 'title', 'valuePicture', 'description', 'file'];
-            names.forEach((name) => {
-                let inputName = document.getElementById(name);
-            
-                inputName.value = "";
-
-                console.log(inputName);
-            });
->>>>>>> front
         }
     };
 });
