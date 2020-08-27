@@ -38,7 +38,7 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
         $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 2
-            echo "<div class=\"product \">
+            echo "<div class=\"product\">
     <div class=\"illustration\">
         <img src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
         <div class=\"categorie\">";
@@ -81,6 +81,10 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 23
+        echo "
+
+";
     }
 
     public function getTemplateName()
@@ -95,13 +99,13 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
 
     public function getDebugInfo()
     {
-        return array (  74 => 18,  70 => 17,  66 => 16,  59 => 12,  54 => 10,  46 => 5,  41 => 2,  37 => 1,);
+        return array (  85 => 23,  74 => 18,  70 => 17,  66 => 16,  59 => 12,  54 => 10,  46 => 5,  41 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% for post in posts %}
-<div class=\"product \">
+<div class=\"product\">
     <div class=\"illustration\">
         <img src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
         <div class=\"categorie\">{{post.category_name}}</div>
@@ -121,6 +125,9 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
     <br><hr> -->
               
 </div>
-{% endfor %}", "posts.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\posts.html.twig");
+{% endfor %}
+
+
+", "posts.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\posts.html.twig");
     }
 }

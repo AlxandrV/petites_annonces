@@ -24,6 +24,13 @@ addEventListener('load', function loadProducts(){
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             content[0].innerHTML = xhr.responseText;
+
+            const posts = document.getElementsByClassName('product');
+            Array.from(posts).forEach(function (element) {
+            element.addEventListener('click', () => {
+                console.log('hello')
+            })
+    });
         }
     };
 });
@@ -79,4 +86,5 @@ form.addEventListener('submit', (e) => {
         }
     };
 });
+
 

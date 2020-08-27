@@ -13,13 +13,14 @@ class Post{
 
         if($validation ==="OK"){
             //upload picture
-            if(isset($_FILES)){
+            dump($_FILES);
+            if($_FILES['file']!==''){
                 $info = new \SplFileInfo($_FILES['file']['name']);
                 $extension = $info->getExtension();
                 $code=bin2hex(openssl_random_pseudo_bytes(24));
                 $upload = (new self)->UploadPic($code,$extension);
                 if($upload == !false){
-                    $picture = basename($code.$extension);
+                    $picture = basename($code.'.'.$extension);
                 }else{
                     echo json_encode("Echec lors de l'envoi du fichier");
                     return;
@@ -245,7 +246,7 @@ class Post{
     public function UploadPic($code,$extension){
         $files_tmp = $_FILES['file']['tmp_name'];
         $url = './media';
-        $newName = basename($code.$extension);
+        $newName = basename($code.'.'.$extension);
         $path = "$url" . DIRECTORY_SEPARATOR . "$newName";
         move_uploaded_file($files_tmp, $path);
         if (file_exists($path)) {
