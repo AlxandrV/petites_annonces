@@ -40,22 +40,22 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
             <div class=\"userDescription\">
                 <div class=\"form-group\">
                     <label for=\"name\">Nom</label>
-                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"user_name\" placeholder=\"Mes couilles\">
+                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"user_name\" placeholder=\"Mes couilles\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"firstName\">Prénom</label>
-                    <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"user_firstname\" placeholder=\"En ski\">
+                    <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"user_firstname\" placeholder=\"En ski\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"email\">Adresse mail</label>
-                    <input type=\"email\" class=\"form-control\" id=\"email\" name=\"user_mail\" placeholder=\"mescouillesenski@example.com\">
+                    <input type=\"email\" class=\"form-control\" id=\"email\" name=\"user_mail\" placeholder=\"mescouillesenski@example.com\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"phone\">Numéro de téléphone</label>
-                    <input type=\"tel\" class=\"form-control\" id=\"phone\" name=\"user_phone\" placeholder=\"0164346007\">
+                    <input type=\"tel\" class=\"form-control\" id=\"phone\" name=\"user_phone\" placeholder=\"0164346007\" required>
                 </div>
             </div>
     
@@ -87,22 +87,23 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
         
                         <div class=\"form-group\">
                             <label for=\"title\">Titre de votre annonce</label>
-                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" placeholder=\"TItre de l'annoce\">
+                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" placeholder=\"TItre de l'annoce\" required>
                         </div>
                     </div>
 
                     <div class=\"modalPicture\">
                         <div class=\"sectionPicture\">
-                            <img id=\"imgPicture\" src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+                            <img id=\"imgPicture\" src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\" >
                         </div>
+                        <input id=\"valuePicture\" type=\"hidden\" name=\"picture\" value=\"default.jpg\">
                         <label for=\"file\" class=\"labelFile\">Ajouter une image</label>
-                        <input type=\"file\" class=\"buttonFile\" name=\"picture\" id=\"file\" onchange=\"handleFiles(this.files)\">
+                        <input type=\"file\" class=\"buttonFile\" id=\"file\" onchange=\"handleFiles(this.files)\" value=\"default.jpg\">
                     </div>
                 </div>
 
                 <div class=\"form-group\">
                     <label for=\"description\">Descriptif de votre annonce</label>
-                    <textarea class=\"form-control\" id=\"title\" name=\"title\" rows=\"8\" cols=\"40\" placeholder=\"Descriptif de l'annonce\"></textarea>
+                    <textarea class=\"form-control\" id=\"description\" name=\"description\" rows=\"8\" cols=\"40\" placeholder=\"Descriptif de l'annonce\" required></textarea>
                 </div>
             </div>
         </div>
@@ -138,22 +139,22 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
             <div class=\"userDescription\">
                 <div class=\"form-group\">
                     <label for=\"name\">Nom</label>
-                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"user_name\" placeholder=\"Mes couilles\">
+                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"user_name\" placeholder=\"Mes couilles\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"firstName\">Prénom</label>
-                    <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"user_firstname\" placeholder=\"En ski\">
+                    <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"user_firstname\" placeholder=\"En ski\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"email\">Adresse mail</label>
-                    <input type=\"email\" class=\"form-control\" id=\"email\" name=\"user_mail\" placeholder=\"mescouillesenski@example.com\">
+                    <input type=\"email\" class=\"form-control\" id=\"email\" name=\"user_mail\" placeholder=\"mescouillesenski@example.com\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"phone\">Numéro de téléphone</label>
-                    <input type=\"tel\" class=\"form-control\" id=\"phone\" name=\"user_phone\" placeholder=\"0164346007\">
+                    <input type=\"tel\" class=\"form-control\" id=\"phone\" name=\"user_phone\" placeholder=\"0164346007\" required>
                 </div>
             </div>
     
@@ -171,22 +172,23 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
         
                         <div class=\"form-group\">
                             <label for=\"title\">Titre de votre annonce</label>
-                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" placeholder=\"TItre de l'annoce\">
+                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" placeholder=\"TItre de l'annoce\" required>
                         </div>
                     </div>
 
                     <div class=\"modalPicture\">
                         <div class=\"sectionPicture\">
-                            <img id=\"imgPicture\" src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+                            <img id=\"imgPicture\" src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\" >
                         </div>
+                        <input id=\"valuePicture\" type=\"hidden\" name=\"picture\" value=\"default.jpg\">
                         <label for=\"file\" class=\"labelFile\">Ajouter une image</label>
-                        <input type=\"file\" class=\"buttonFile\" name=\"picture\" id=\"file\" onchange=\"handleFiles(this.files)\">
+                        <input type=\"file\" class=\"buttonFile\" id=\"file\" onchange=\"handleFiles(this.files)\" value=\"default.jpg\">
                     </div>
                 </div>
 
                 <div class=\"form-group\">
                     <label for=\"description\">Descriptif de votre annonce</label>
-                    <textarea class=\"form-control\" id=\"title\" name=\"title\" rows=\"8\" cols=\"40\" placeholder=\"Descriptif de l'annonce\"></textarea>
+                    <textarea class=\"form-control\" id=\"description\" name=\"description\" rows=\"8\" cols=\"40\" placeholder=\"Descriptif de l'annonce\" required></textarea>
                 </div>
             </div>
         </div>
