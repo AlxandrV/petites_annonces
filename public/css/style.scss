@@ -117,6 +117,13 @@ body{
             transform: translateX(-100%);
         }
 
+        #closeIcon{
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            cursor: pointer;
+        }
+
         form{
             width: 50%;
             box-sizing: border-box;
