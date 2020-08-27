@@ -1,4 +1,5 @@
 <div id="modalAdd" class="modalAdd">
+    <div id="closeIcon"><img src="../../public/media/cross-icon.png" alt="Icon en forme de croix" width="48" height="48"></div>
     <form>
         <div class="modalDescription">
             <div class="userDescription">
@@ -43,11 +44,10 @@
 
                     <div class="modalPicture">
                         <div class="sectionPicture">
-                            <img id="imgPicture" src="media/default.jpg" alt="illustration" width="600" height="398" >
+                            <img id="imgPicture" src="media/default.jpg" alt="illustration" width="600" height="398">
                         </div>
-                        <input id="valuePicture" type="hidden" name="picture" value="default.jpg">
                         <label for="file" class="labelFile">Ajouter une image</label>
-                        <input type="file" class="buttonFile" id="file" onchange="handleFiles(this.files)" value="default.jpg">
+                        <input type="file" class="buttonFile" id="file" onchange="handleFiles(this.files)" value="default.jpg" name="file">
                     </div>
                 </div>
 

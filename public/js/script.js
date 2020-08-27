@@ -35,9 +35,10 @@ const modalAdd = document.getElementById('modalAdd');
 addPost.addEventListener('click', () => {
     modalAdd.classList.add('active');
 
-    // Cache le modal lors d'un click en dehors de la fenêtre
-    modalAdd.addEventListener('click', () => {
-        // modalAdd.classList.remove('active');
+    // Cache le modal lors d'un click sur la croix
+    const crossClose = document.getElementById('closeIcon');
+    crossClose.addEventListener('click', () => {
+        modalAdd.classList.remove('active');
     });
 });
 
@@ -45,9 +46,7 @@ addPost.addEventListener('click', () => {
 function handleFiles(file) {
     let picture = file[0];
     let img = document.getElementById('imgPicture');
-    let valuePicture = document.getElementById('valuePicture');
 
-    valuePicture.setAttribute('value', picture.name);
     img.file = picture;
 
     let reader = new FileReader();
@@ -56,9 +55,8 @@ function handleFiles(file) {
 }
 
 // Ajax formulaire d'ajout ____________________________________________________
-const form = document.getElementById('modalAdd').children[0];
+const form = document.getElementById('modalAdd').children[1];
 console.log(form);
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
