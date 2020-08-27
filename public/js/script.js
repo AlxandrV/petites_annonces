@@ -70,9 +70,15 @@ form.addEventListener('submit', (e) => {
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-                        
             modalAdd.classList.remove('active');
-            console.log('lol');
+
+            let names = ['name', 'firstName', 'email', 'phone', 'title', 'valuePicture', 'description'];
+            names.forEach((name) => {
+                let inputName = document.getElementById(name);
+            
+                inputName.value = "";
+            });
         }
     };
 });
+
