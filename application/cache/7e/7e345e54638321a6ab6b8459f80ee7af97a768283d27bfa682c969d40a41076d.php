@@ -35,6 +35,7 @@ class __TwigTemplate_9ccc42cbef9711322c578f4f8b4f52800f090d2ea84e874342c4d475b75
         $macros = $this->macros;
         // line 1
         echo "<div id=\"modalAdd\" class=\"modalAdd\">
+    <div id=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
     <form>
         <div class=\"modalDescription\">
             <div class=\"userDescription\">
@@ -66,22 +67,22 @@ class __TwigTemplate_9ccc42cbef9711322c578f4f8b4f52800f090d2ea84e874342c4d475b75
                             <label for=\"category\">Choissisez une catégorie</label>
                             <select class=\"form-control\" id=\"category\" name=\"category\">
                                 ";
-        // line 32
+        // line 33
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 33
+            // line 34
             echo "                                    <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 33), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 34), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 33), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 34), "html", null, true);
             echo "</option>
                                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 36
         echo "                            </select>
                         </div>
         
@@ -93,11 +94,10 @@ class __TwigTemplate_9ccc42cbef9711322c578f4f8b4f52800f090d2ea84e874342c4d475b75
 
                     <div class=\"modalPicture\">
                         <div class=\"sectionPicture\">
-                            <img id=\"imgPicture\" src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\" >
+                            <img id=\"imgPicture\" src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
                         </div>
-                        <input id=\"valuePicture\" type=\"hidden\" name=\"picture\" value=\"default.jpg\">
                         <label for=\"file\" class=\"labelFile\">Ajouter une image</label>
-                        <input type=\"file\" class=\"buttonFile\" id=\"file\" onchange=\"handleFiles(this.files)\" value=\"default.jpg\">
+                        <input type=\"file\" class=\"buttonFile\" id=\"file\" onchange=\"handleFiles(this.files)\" value=\"default.jpg\" name=\"file\">
                     </div>
                 </div>
 
@@ -128,12 +128,13 @@ class __TwigTemplate_9ccc42cbef9711322c578f4f8b4f52800f090d2ea84e874342c4d475b75
 
     public function getDebugInfo()
     {
-        return array (  85 => 35,  74 => 33,  70 => 32,  37 => 1,);
+        return array (  86 => 36,  75 => 34,  71 => 33,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<div id=\"modalAdd\" class=\"modalAdd\">
+    <div id=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
     <form>
         <div class=\"modalDescription\">
             <div class=\"userDescription\">
@@ -178,11 +179,10 @@ class __TwigTemplate_9ccc42cbef9711322c578f4f8b4f52800f090d2ea84e874342c4d475b75
 
                     <div class=\"modalPicture\">
                         <div class=\"sectionPicture\">
-                            <img id=\"imgPicture\" src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\" >
+                            <img id=\"imgPicture\" src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
                         </div>
-                        <input id=\"valuePicture\" type=\"hidden\" name=\"picture\" value=\"default.jpg\">
                         <label for=\"file\" class=\"labelFile\">Ajouter une image</label>
-                        <input type=\"file\" class=\"buttonFile\" id=\"file\" onchange=\"handleFiles(this.files)\" value=\"default.jpg\">
+                        <input type=\"file\" class=\"buttonFile\" id=\"file\" onchange=\"handleFiles(this.files)\" value=\"default.jpg\" name=\"file\">
                     </div>
                 </div>
 

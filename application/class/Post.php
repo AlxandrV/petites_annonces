@@ -13,7 +13,7 @@ class Post{
 
         if($validation ==="OK"){
             //upload picture
-            if(isset($_files)){
+            if(isset($_FILES)){
                 $info = new \SplFileInfo($_FILES['file']['name']);
                 $extension = $info->getExtension();
                 $code=bin2hex(openssl_random_pseudo_bytes(24));
@@ -244,8 +244,13 @@ class Post{
 
     public function UploadPic($code,$extension){
         $files_tmp = $_FILES['file']['tmp_name'];
-        $url = 'media';
+        $url = './media';
         $newName = basename($code.$extension);
-        return move_uploaded_file($files_tmp, "$url" . DIRECTORY_SEPARATOR . "$newName");
+        $path = "$url" . DIRECTORY_SEPARATOR . "$newName";
+        move_uploaded_file($files_tmp, $path);
+        if (file_exists($path)) {
+            return true;
+        }
+        return false;
     }
 }
