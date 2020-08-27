@@ -23,7 +23,6 @@ addEventListener('load', function loadProducts(){
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log('lol');
             content[0].innerHTML = xhr.responseText;
         }
     };
@@ -31,9 +30,9 @@ addEventListener('load', function loadProducts(){
 
 // Affichage du modal d'ajout d'annonce ______________________________________________
 const addPost = document.getElementById('addPost');
+const modalAdd = document.getElementById('modalAdd');
 
 addPost.addEventListener('click', () => {
-    const modalAdd = document.getElementById('modalAdd');
     modalAdd.classList.add('active');
 
     // Cache le modal lors d'un click en dehors de la fenêtre
@@ -42,14 +41,38 @@ addPost.addEventListener('click', () => {
     });
 });
 
-// Upload image modal d'ajout ____________________________________________________
-const inputFile = document.getElementById('file');
+// Display image modal d'ajout ____________________________________________________
+function handleFiles(file) {
+    let picture = file[0];
+    let img = document.getElementById('imgPicture');
+    let valuePicture = document.getElementById('valuePicture');
 
-console.log(inputFile);
-let pictureFile = inputFile.value;
-console.log(pictureFile);
+    valuePicture.setAttribute('value', picture.name);
+    img.file = picture;
 
-let imgPicture = document.getElementById('imgPicture');
-imgPicture.setAttribute('src', pictureFile);
+    let reader = new FileReader();
+    reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+    reader.readAsDataURL(picture);
+}
 
-console.log(imgPicture);
+// Ajax formulaire d'ajout ____________________________________________________
+const form = document.getElementById('modalAdd').children[0];
+console.log(form);
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let data = new FormData(form);
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('POST', 'ajax-post-add', true);
+    xhr.send(data);
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+                        
+            modalAdd.classList.remove('active');
+            console.log('lol');
+        }
+    };
+});
