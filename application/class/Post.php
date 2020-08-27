@@ -137,6 +137,39 @@ class Post{
         echo json_encode('OK');
     }
 
+    public static function ShowPost(){
+
+        if(isset($_POST['id']) && !empty($_POST['id'])){
+            $id = $_POST['id'];
+        }else{
+            echo json_encode("Erreur");
+            return;
+        }
+
+        //Connexion
+        $base = new Connexion();
+
+        //SHOW POST
+        $req = $base->q(
+                        "SELECT
+                            p.title,
+                            p.description,
+                            p.picture,
+                            p.date_validation,
+                            p.user_mail,
+                            p.user_name,
+                            p.user_firstname,
+                            p.user_phone,
+                            p.category_id,
+                            cat.name as category_name
+                        FROM post as p
+                        INNER JOIN category cat ON p.category_id = cat.ID
+                        WHERE p.id LIKE :id",
+            array(array('id',$id,\PDO::PARAM_STR)));
+
+        echo json_encode($req);
+    }
+
 
 
 
