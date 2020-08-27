@@ -76,13 +76,14 @@ form.addEventListener('submit', (e) => {
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             modalAdd.classList.remove('active');
+            form.reset();
 
-            let names = ['name', 'firstName', 'email', 'phone', 'title', 'valuePicture', 'description'];
-            names.forEach((name) => {
-                let inputName = document.getElementById(name);
-            
-                inputName.value = "";
-            });
+            // let names = ['name', 'firstName', 'email', 'phone', 'title', 'valuePicture', 'description'];
+            // names.forEach((name) => {
+            //     let inputName = document.getElementById(name);
+
+            //     inputName.value = "";
+            // });
         }
     };
 });

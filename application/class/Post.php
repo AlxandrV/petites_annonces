@@ -14,7 +14,7 @@ class Post{
         if($validation ==="OK"){
             //upload picture
             dump($_FILES);
-            if($_FILES['file']!==''){
+            if($_FILES['file']['name']!==''){
                 $info = new \SplFileInfo($_FILES['file']['name']);
                 $extension = $info->getExtension();
                 $code=bin2hex(openssl_random_pseudo_bytes(24));
