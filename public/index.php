@@ -86,7 +86,7 @@ $router->map('POST', '/ajax-postList', function(){
     \App\PostList::postList();
 });
 //AJAX Post Add_________________________________________
-$router->map('POST', '/ajax-post-add', function(){
+$router->map('GET', '/ajax-post-add', function(){
     \App\Post::Add();
 });
 //AJAX Post Update_________________________________________
@@ -98,7 +98,7 @@ $router->map('POST', '/ajax-post-delete', function(){
     \App\Post::Delete();
 });
 //AJAX Post Show_________________________________________
-$router->map('GET', '/ajax-post-show', function(){
+$router->map('POST', '/ajax-post-show', function(){
     \App\Post::ShowPost();
 });
 //404 Page __________________________________

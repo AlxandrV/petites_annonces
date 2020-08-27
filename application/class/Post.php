@@ -11,15 +11,23 @@ class Post{
 
         $validation= (new self)->Validation();
 
-
         if($validation ==="OK"){
-
-            //set picture
-            if(isset($_POST['picture']) && !empty($_POST['picture'])){
-                $picture = $_POST['picture'];
+            //upload picture
+            if(isset($_files)){
+                $info = new \SplFileInfo($_FILES['file']['name']);
+                $extension = $info->getExtension();
+                $code=bin2hex(openssl_random_pseudo_bytes(24));
+                $upload = (new self)->UploadPic($code,$extension);
+                if($upload == !false){
+                    $picture = basename($code.$extension);
+                }else{
+                    echo json_encode("Echec lors de l'envoi du fichier");
+                    return;
+                }
             }else{
-                $picture = "placeholder.jpg";
+                $picture = 'placeholder.jpg';
             }
+
             //get values
             $title = $_POST['title'];
             $descript = $_POST['description'];
@@ -232,5 +240,12 @@ class Post{
             return 'Veuillez choisir une categorie';
         }
         return "OK";
+    }
+
+    public function UploadPic($code,$extension){
+        $files_tmp = $_FILES['file']['tmp_name'];
+        $url = 'media';
+        $newName = basename($code.$extension);
+        return move_uploaded_file($files_tmp, "$url" . DIRECTORY_SEPARATOR . "$newName");
     }
 }
