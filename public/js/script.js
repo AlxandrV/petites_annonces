@@ -63,7 +63,6 @@ function handleFiles(file) {
 
 // Ajax formulaire d'ajout ____________________________________________________
 const form = document.getElementById('modalAdd').children[1];
-console.log(form);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -78,12 +77,23 @@ form.addEventListener('submit', (e) => {
             modalAdd.classList.remove('active');
             form.reset();
 
+<<<<<<< HEAD
             // let names = ['name', 'firstName', 'email', 'phone', 'title', 'valuePicture', 'description'];
             // names.forEach((name) => {
             //     let inputName = document.getElementById(name);
 
             //     inputName.value = "";
             // });
+=======
+            let names = ['name', 'firstName', 'email', 'phone', 'title', 'valuePicture', 'description', 'file'];
+            names.forEach((name) => {
+                let inputName = document.getElementById(name);
+            
+                inputName.value = "";
+
+                console.log(inputName);
+            });
+>>>>>>> front
         }
     };
 });
