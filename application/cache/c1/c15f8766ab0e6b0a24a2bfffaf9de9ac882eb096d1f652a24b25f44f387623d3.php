@@ -87,7 +87,10 @@ class __TwigTemplate_7c495280f6575f7ef45632d9d50c246f7d5a34cc2f54fa294fb23e6538c
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "date_creation", [], "any", false, false, false, 22), "html", null, true);
             echo "</p><br>
     <br><hr> -->
-              
+    <input class=\"idAjaxModal\" type=\"hidden\" value=\"";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 24), "html", null, true);
+            echo "\"> 
 </div>
 ";
         }
@@ -108,7 +111,7 @@ class __TwigTemplate_7c495280f6575f7ef45632d9d50c246f7d5a34cc2f54fa294fb23e6538c
 
     public function getDebugInfo()
     {
-        return array (  87 => 22,  83 => 21,  79 => 20,  72 => 16,  67 => 14,  58 => 9,  53 => 6,  47 => 5,  45 => 4,  41 => 2,  37 => 1,);
+        return array (  92 => 24,  87 => 22,  83 => 21,  79 => 20,  72 => 16,  67 => 14,  58 => 9,  53 => 6,  47 => 5,  45 => 4,  41 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -136,7 +139,7 @@ class __TwigTemplate_7c495280f6575f7ef45632d9d50c246f7d5a34cc2f54fa294fb23e6538c
     <p><strong>picture: </strong>{{post.picture}}</p><br>
     <p><strong>date_creation: </strong>{{post.date_creation}}</p><br>
     <br><hr> -->
-              
+    <input class=\"idAjaxModal\" type=\"hidden\" value=\"{{post.id}}\"> 
 </div>
 {% endfor %}", "posts.html.twig", "/var/www/html/application/templates/posts.html.twig");
     }
