@@ -77,7 +77,8 @@ $router->map('GET', '/debug', function () {
     // $twig->render([
     //         'categories' => $categories->data,
     //     ]);
-    require_once '../application/class/PostList.php';
+    // require_once '../application/class/PostList.php';
+    \App\Mail::sendEmail();
 });
 //___________________________________________________
 
