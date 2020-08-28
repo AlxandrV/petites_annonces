@@ -175,7 +175,14 @@ class Post{
                         WHERE p.id LIKE :id",
             array(array('id',$id,\PDO::PARAM_STR)));
 
-        echo json_encode($req);
+        // echo json_encode($req);
+
+        dump($req);
+        $twig = new Twig('modal_detail_post.html.twig');
+        $twig->render([
+            'posts' => $req[0],
+        ]);
+
     }
 
 

@@ -34,41 +34,42 @@ class __TwigTemplate_2a89171b509df9a9ff4d1ef97e6e071c91df0511f43660c9e02c6ffa0fc
     {
         $macros = $this->macros;
         // line 1
-        echo "<div id=\"modalDetail\">
+        echo "<div id=\"modalDetail\" class=\"active\">
+    <div id=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
     <div id=\"contentModal\">
         <div>
             <div>
                 <p>";
-        // line 5
-        echo twig_escape_filter($this->env, ($context["name"] ?? null), "html", null, true);
-        echo "name</p>
-                <p>";
         // line 6
-        echo twig_escape_filter($this->env, ($context["firstname"] ?? null), "html", null, true);
-        echo "firstname</p>
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "name", [], "any", false, false, false, 6), "html", null, true);
+        echo "</p>
                 <p>";
         // line 7
-        echo twig_escape_filter($this->env, ($context["mail"] ?? null), "html", null, true);
-        echo "mail</p>
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "firstname", [], "any", false, false, false, 7), "html", null, true);
+        echo "</p>
                 <p>";
         // line 8
-        echo twig_escape_filter($this->env, ($context["phone"] ?? null), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "mail", [], "any", false, false, false, 8), "html", null, true);
+        echo "</p>
+                <p>";
+        // line 9
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "phone", [], "any", false, false, false, 9), "html", null, true);
         echo "phone</p>
             </div>
             <div>
                 <img src=\"";
-        // line 11
-        echo twig_escape_filter($this->env, ($context["picture"] ?? null), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "picture", [], "any", false, false, false, 12), "html", null, true);
         echo "\" alt=\"image d'illustration\">
             </div>
         </div>
         <div>
             <p>";
-        // line 15
+        // line 16
         echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
         echo "title</p>
             <p>";
-        // line 16
+        // line 17
         echo twig_escape_filter($this->env, ($context["description"] ?? null), "html", null, true);
         echo "lorem</p>
         </div>
@@ -88,22 +89,23 @@ class __TwigTemplate_2a89171b509df9a9ff4d1ef97e6e071c91df0511f43660c9e02c6ffa0fc
 
     public function getDebugInfo()
     {
-        return array (  72 => 16,  68 => 15,  61 => 11,  55 => 8,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  73 => 17,  69 => 16,  62 => 12,  56 => 9,  52 => 8,  48 => 7,  44 => 6,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div id=\"modalDetail\">
+        return new Source("<div id=\"modalDetail\" class=\"active\">
+    <div id=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
     <div id=\"contentModal\">
         <div>
             <div>
-                <p>{{name}}name</p>
-                <p>{{firstname}}firstname</p>
-                <p>{{mail}}mail</p>
-                <p>{{phone}}phone</p>
+                <p>{{posts.name}}</p>
+                <p>{{posts.firstname}}</p>
+                <p>{{posts.mail}}</p>
+                <p>{{posts.phone}}phone</p>
             </div>
             <div>
-                <img src=\"{{picture}}\" alt=\"image d'illustration\">
+                <img src=\"{{posts.picture}}\" alt=\"image d'illustration\">
             </div>
         </div>
         <div>

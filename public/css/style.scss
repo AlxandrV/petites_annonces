@@ -117,13 +117,6 @@ body{
             transform: translateX(-100%);
         }
 
-        #closeIcon{
-            position: absolute;
-            top: 50px;
-            right: 50px;
-            cursor: pointer;
-        }
-
         form{
             width: 50%;
             box-sizing: border-box;
@@ -184,6 +177,7 @@ body{
 
     #modalDetail{
         position: absolute;
+        left: 100%;
         top: 0;
         width: 100vw;
         height: 100vh;
@@ -192,6 +186,11 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: transform 1s ease-in-out;
+
+        &.active{
+            transform: translateX(-100%);
+        }
         
         #contentModal{
             width: 50%;
@@ -206,4 +205,12 @@ body{
             }
         }
     }
+
+    #closeIcon{
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        cursor: pointer;
+    }
+
 }
