@@ -1,7 +1,11 @@
 {% for post in posts %}
 <div class="product">
     <div class="illustration">
-        <img src="media/user_uploads/placeholder.jpg" alt="illustration" width="600" height="398">
+        {% if post.picture != 'placeholder.jpg' %}
+            <img src="media/{{post.picture}}" alt="illustration" width="600" height="398">
+        {% else %}        
+            <img src="media/default.jpg" alt="illustration" width="600" height="398">
+        {% endif %}
         <div class="categorie">{{post.category_name}}</div>
     </div>
 
