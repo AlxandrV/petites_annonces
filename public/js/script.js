@@ -25,14 +25,47 @@ addEventListener('load', function loadProducts(){
         if (this.readyState == 4 && this.status == 200) {
             content[0].innerHTML = xhr.responseText;
 
+<<<<<<< HEAD
             const posts = document.getElementsByClassName('product');
             Array.from(posts).forEach(function (element) {
             element.addEventListener('click', () => {
                 console.log('hello')
             })
     });
+=======
+            // Modal détail annonce selon le click
+            const posts = document.getElementsByClassName('product');
+            Array.from(posts).forEach(function (element) {
+                element.addEventListener('click', () => {
+                    const inputId = element.querySelector('.idAjaxModal').value;
+
+                    let formData = new FormData();
+                    formData.append('id', inputId);
+
+                    let xhr2 = new XMLHttpRequest();
+                    xhr2.open('POST', 'ajax-post-show', true);
+                    // xhr.send("search=" + search + "&pageStart=" + page);
+                    xhr2.send(formData);   
+                    
+                    xhr2.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.innerHTML = xhr2.responseText;
+                            console.log('test');
+                        }
+                    }
+                    
+                    console.log(element)
+                    // const modalDetail = document.getElementById('modalDetail');
+                    // modalDetail.classList.add('active');
+
+                    // modalDetail.addEventListener('click', () => {
+                    //     modalDetail.classList.remove('active');
+                    // });
+                });
+            });
+>>>>>>> front
         }
-    };
+    }
 });
 
 // Affichage du modal d'ajout d'annonce ______________________________________________

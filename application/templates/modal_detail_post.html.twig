@@ -1,14 +1,15 @@
-<div id="modalDetail">
+<div id="modalDetail" class="active">
+    <div id="closeIcon"><img src="../../public/media/cross-icon.png" alt="Icon en forme de croix" width="48" height="48"></div>
     <div id="contentModal">
         <div>
             <div>
-                <p>{{name}}name</p>
-                <p>{{firstname}}firstname</p>
-                <p>{{mail}}mail</p>
-                <p>{{phone}}phone</p>
+                <p>{{posts.name}}</p>
+                <p>{{posts.firstname}}</p>
+                <p>{{posts.mail}}</p>
+                <p>{{posts.phone}}phone</p>
             </div>
             <div>
-                <img src="{{picture}}" alt="image d'illustration">
+                <img src="{{posts.picture}}" alt="image d'illustration">
             </div>
         </div>
         <div>
