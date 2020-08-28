@@ -25,14 +25,6 @@ addEventListener('load', function loadProducts(){
         if (this.readyState == 4 && this.status == 200) {
             content[0].innerHTML = xhr.responseText;
 
-<<<<<<< HEAD
-            const posts = document.getElementsByClassName('product');
-            Array.from(posts).forEach(function (element) {
-            element.addEventListener('click', () => {
-                console.log('hello')
-            })
-    });
-=======
             // Modal détail annonce selon le click
             const posts = document.getElementsByClassName('product');
             Array.from(posts).forEach(function (element) {
@@ -63,7 +55,6 @@ addEventListener('load', function loadProducts(){
                     // });
                 });
             });
->>>>>>> front
         }
     }
 });

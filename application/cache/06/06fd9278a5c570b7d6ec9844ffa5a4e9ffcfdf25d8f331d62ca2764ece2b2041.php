@@ -60,10 +60,15 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
         $this->loadTemplate("modal_add.html.twig", "base.html.twig", 17)->display($context);
         // line 18
         echo "
-    ";
+    <!-- ";
         // line 19
+        $this->loadTemplate("modal_detail_post.html.twig", "base.html.twig", 19)->display($context);
+        echo " -->
+
+    ";
+        // line 21
         $this->displayBlock('scipt', $context, $blocks);
-        // line 27
+        // line 29
         echo "</body>
 </html>";
     }
@@ -81,11 +86,11 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
     ";
     }
 
-    // line 19
+    // line 21
     public function block_scipt($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 20
+        // line 22
         echo "        <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
@@ -107,7 +112,7 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 
     public function getDebugInfo()
     {
-        return array (  89 => 20,  85 => 19,  76 => 5,  72 => 4,  67 => 27,  65 => 19,  62 => 18,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
+        return array (  94 => 22,  90 => 21,  81 => 5,  77 => 4,  72 => 29,  70 => 21,  65 => 19,  62 => 18,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -129,6 +134,8 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
     {% include 'content.html.twig' %}
 
     {% include 'modal_add.html.twig' %}
+
+    <!-- {% include 'modal_detail_post.html.twig' %} -->
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->
