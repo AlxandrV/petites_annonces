@@ -38,21 +38,6 @@ $router->map('GET', '/valid-[:unique_id]', function ($unique_id) {
         ]);
 });
 
-//Edit Pages __________________________________
-$router->map('GET', '/edit-[:unique_id]', function ($unique_id) {
-    //test if unique_id exists
-    if(!\App\ShowPost::Exists($unique_id)){
-        header('Location: /');
-    }
-    //request post data
-    $showPost = new ShowPost($unique_id);
-    //render template
-    $twig = new Twig('debug.html.twig');
-    $twig->render([
-            'post' => $showPost->data[0],
-        ]);
-});
-
 //Delete Pages __________________________________
 $router->map('GET', '/del-[:unique_id]', function ($unique_id) {
     //test if unique_id exists

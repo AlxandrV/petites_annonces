@@ -40,48 +40,63 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
             // line 2
             echo "<div class=\"product\">
     <div class=\"illustration\">
-        <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
-        <div class=\"categorie\">";
-            // line 5
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "category_name", [], "any", false, false, false, 5), "html", null, true);
+        ";
+            // line 4
+            if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["post"], "picture", [], "any", false, false, false, 4), "placeholder.jpg"))) {
+                // line 5
+                echo "            <img src=\"media/user_uploads/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "picture", [], "any", false, false, false, 5), "html", null, true);
+                echo "\" alt=\"illustration\" width=\"600\" height=\"398\">
+        ";
+            } else {
+                // line 7
+                echo "            <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+        ";
+            }
+            // line 9
+            echo "        <div class=\"categorie\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "category_name", [], "any", false, false, false, 9), "html", null, true);
             echo "</div>
     </div>
 
     <div class=\"detailPost\">
         <div class=\"titlePost\">
             <p><strong>";
-            // line 10
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 10), "html", null, true);
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 14), "html", null, true);
             echo "</strong></p>
         </div>
         <p class=\"description\">";
-            // line 12
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 12), "html", null, true);
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 16), "html", null, true);
             echo "</p>
 
     </div>
 
     <!-- <p><strong>id: </strong>";
-            // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 16), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 20), "html", null, true);
             echo "</p><br>
     <p><strong>picture: </strong>";
-            // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "picture", [], "any", false, false, false, 17), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "picture", [], "any", false, false, false, 21), "html", null, true);
             echo "</p><br>
     <p><strong>date_creation: </strong>";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "date_creation", [], "any", false, false, false, 18), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "date_creation", [], "any", false, false, false, 22), "html", null, true);
             echo "</p><br>
     <br><hr> -->
-              
+    <input class=\"idAjaxModal\" type=\"hidden\" value=\"";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 24), "html", null, true);
+            echo "\"> 
 </div>
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
+        // line 27
         echo "
 
 ";
@@ -99,7 +114,7 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
 
     public function getDebugInfo()
     {
-        return array (  85 => 23,  74 => 18,  70 => 17,  66 => 16,  59 => 12,  54 => 10,  46 => 5,  41 => 2,  37 => 1,);
+        return array (  100 => 27,  91 => 24,  86 => 22,  82 => 21,  78 => 20,  71 => 16,  66 => 14,  57 => 9,  53 => 7,  47 => 5,  45 => 4,  41 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -107,7 +122,11 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
         return new Source("{% for post in posts %}
 <div class=\"product\">
     <div class=\"illustration\">
-        <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+        {% if post.picture != 'placeholder.jpg' %}
+            <img src=\"media/user_uploads/{{post.picture}}\" alt=\"illustration\" width=\"600\" height=\"398\">
+        {% else %}
+            <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+        {% endif %}
         <div class=\"categorie\">{{post.category_name}}</div>
     </div>
 
@@ -123,7 +142,7 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
     <p><strong>picture: </strong>{{post.picture}}</p><br>
     <p><strong>date_creation: </strong>{{post.date_creation}}</p><br>
     <br><hr> -->
-              
+    <input class=\"idAjaxModal\" type=\"hidden\" value=\"{{post.id}}\"> 
 </div>
 {% endfor %}
 

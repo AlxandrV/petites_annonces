@@ -68,7 +68,8 @@ class Post{
                 )
             );
         }
-        echo json_encode($validation);
+        $sendMail = new SMail('valid',$user_mail,$user_firstname,$user_n,$unique_id);
+        echo json_encode($validation.' '.$sendMail);
     }
 
 
@@ -142,7 +143,19 @@ class Post{
         $base->qw('DELETE FROM post WHERE unique_id = :unique_id',
             array(array('unique_id',$unique_id,\PDO::PARAM_STR)));
 
-        echo json_encode('OK');
+        $req = $base->q(
+                        "SELECT `user_mail`,
+                                `user_name`,
+                                `user_firstname`,
+                        FROM post
+                        WHERE `unique_id` = :unique_id",
+            array(array('unique_id',$unique_id,\PDO::PARAM_STR)));
+        $user_mail = $req[0]->user_mail;
+        $user_firstname = $req[0]->user_firstname;
+        $user_n = $req[0]->user_name;
+
+        $sendMail = new SMail('delete',$user_mail,$user_firstname,$user_n,$unique_id);
+        echo json_encode('OK '.$sendMail);
     }
 
     public static function ShowPost(){
@@ -183,11 +196,6 @@ class Post{
         ]);
 
     }
-
-
-
-
-
 
     public function Validation(){
         if(isset($_POST['title']) && !empty($_POST['title'])){
