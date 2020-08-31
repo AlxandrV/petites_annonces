@@ -33,8 +33,12 @@ $router->map('GET', '/valid-[:unique_id]', function ($unique_id) {
     $categories = new Categories();
     //request post data
     $showPost = new ShowPost($unique_id);
+
+    //categories request
+    $categories = new Categories();
+
     //render template
-    $twig = new Twig('debug.html.twig');
+    $twig = new Twig('validate.html.twig');
     $twig->render([
             'post' => $showPost->data[0],
             'categories' => $categories->data,
