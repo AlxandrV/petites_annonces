@@ -38,20 +38,20 @@ class __TwigTemplate_7c495280f6575f7ef45632d9d50c246f7d5a34cc2f54fa294fb23e6538c
         $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 2
-            echo "<div class=\"product \">
+            echo "<div class=\"product\">
     <div class=\"illustration\">
         ";
             // line 4
             if ((0 !== twig_compare(twig_get_attribute($this->env, $this->source, $context["post"], "picture", [], "any", false, false, false, 4), "placeholder.jpg"))) {
                 // line 5
-                echo "            <img src=\"media/";
+                echo "            <img src=\"media/user_uploads/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "picture", [], "any", false, false, false, 5), "html", null, true);
                 echo "\" alt=\"illustration\" width=\"600\" height=\"398\">
         ";
             } else {
                 // line 6
                 echo "        
-            <img src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+            <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
         ";
             }
             // line 9
@@ -97,6 +97,10 @@ class __TwigTemplate_7c495280f6575f7ef45632d9d50c246f7d5a34cc2f54fa294fb23e6538c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 27
+        echo "
+
+";
     }
 
     public function getTemplateName()
@@ -111,18 +115,18 @@ class __TwigTemplate_7c495280f6575f7ef45632d9d50c246f7d5a34cc2f54fa294fb23e6538c
 
     public function getDebugInfo()
     {
-        return array (  92 => 24,  87 => 22,  83 => 21,  79 => 20,  72 => 16,  67 => 14,  58 => 9,  53 => 6,  47 => 5,  45 => 4,  41 => 2,  37 => 1,);
+        return array (  101 => 27,  92 => 24,  87 => 22,  83 => 21,  79 => 20,  72 => 16,  67 => 14,  58 => 9,  53 => 6,  47 => 5,  45 => 4,  41 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% for post in posts %}
-<div class=\"product \">
+<div class=\"product\">
     <div class=\"illustration\">
         {% if post.picture != 'placeholder.jpg' %}
-            <img src=\"media/{{post.picture}}\" alt=\"illustration\" width=\"600\" height=\"398\">
+            <img src=\"media/user_uploads/{{post.picture}}\" alt=\"illustration\" width=\"600\" height=\"398\">
         {% else %}        
-            <img src=\"media/default.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+            <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
         {% endif %}
         <div class=\"categorie\">{{post.category_name}}</div>
     </div>
@@ -141,6 +145,9 @@ class __TwigTemplate_7c495280f6575f7ef45632d9d50c246f7d5a34cc2f54fa294fb23e6538c
     <br><hr> -->
     <input class=\"idAjaxModal\" type=\"hidden\" value=\"{{post.id}}\"> 
 </div>
-{% endfor %}", "posts.html.twig", "/var/www/html/application/templates/posts.html.twig");
+{% endfor %}
+
+
+", "posts.html.twig", "/var/www/html/application/templates/posts.html.twig");
     }
 }

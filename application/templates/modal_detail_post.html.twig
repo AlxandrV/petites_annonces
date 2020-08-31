@@ -1,20 +1,22 @@
-<div id="modalDetail" class="active">
-    <div id="closeIcon"><img src="../../public/media/cross-icon.png" alt="Icon en forme de croix" width="48" height="48"></div>
-    <div id="contentModal">
+
+<div class="closeIcon"><img src="../../public/media/cross-icon.png" alt="Icon en forme de croix" width="48" height="48"></div>
+<div id="contentModal">
+    <div>
         <div>
-            <div>
-                <p>{{posts.name}}</p>
-                <p>{{posts.firstname}}</p>
-                <p>{{posts.mail}}</p>
-                <p>{{posts.phone}}phone</p>
-            </div>
-            <div>
-                <img src="{{posts.picture}}" alt="image d'illustration">
-            </div>
+            <p>{{posts.category_name}}</p>
+            <span></span>
+            <p>Nom : {{posts.user_name}}</p>
+            <p>Prénom : {{posts.user_firstname}}</p>
+            <p>Adresse mail : {{posts.user_mail}}</p>
+            <p>Téléphone : {{posts.user_phone}}</p>
+            <span></span>
         </div>
         <div>
-            <p>{{title}}title</p>
-            <p>{{description}}lorem</p>
+            <img src="media/user_uploads/{{posts.picture}}" alt="image d'illustration">
         </div>
+    </div>
+    <div>
+        <h5>{{posts.title}}</h5>
+        <p>{{posts.description}}</p>
     </div>
 </div>

@@ -60,10 +60,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
         $this->loadTemplate("modal_add.html.twig", "base.html.twig", 17)->display($context);
         // line 18
         echo "
-    <!-- ";
-        // line 19
-        $this->loadTemplate("modal_detail_post.html.twig", "base.html.twig", 19)->display($context);
-        echo " -->
+    <div id=\"modalDetail\"></div>
 
     ";
         // line 21
@@ -112,7 +109,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
 
     public function getDebugInfo()
     {
-        return array (  94 => 22,  90 => 21,  81 => 5,  77 => 4,  72 => 29,  70 => 21,  65 => 19,  62 => 18,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
+        return array (  91 => 22,  87 => 21,  78 => 5,  74 => 4,  69 => 29,  67 => 21,  62 => 18,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -135,7 +132,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
 
     {% include 'modal_add.html.twig' %}
 
-    <!-- {% include 'modal_detail_post.html.twig' %} -->
+    <div id=\"modalDetail\"></div>
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->

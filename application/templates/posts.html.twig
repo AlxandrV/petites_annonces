@@ -2,9 +2,9 @@
 <div class="product">
     <div class="illustration">
         {% if post.picture != 'placeholder.jpg' %}
-            <img src="media/{{post.picture}}" alt="illustration" width="600" height="398">
+            <img src="media/user_uploads/{{post.picture}}" alt="illustration" width="600" height="398">
         {% else %}        
-            <img src="media/default.jpg" alt="illustration" width="600" height="398">
+            <img src="media/user_uploads/placeholder.jpg" alt="illustration" width="600" height="398">
         {% endif %}
         <div class="categorie">{{post.category_name}}</div>
     </div>

@@ -34,45 +34,50 @@ class __TwigTemplate_2a89171b509df9a9ff4d1ef97e6e071c91df0511f43660c9e02c6ffa0fc
     {
         $macros = $this->macros;
         // line 1
-        echo "<div id=\"modalDetail\" class=\"active\">
-    <div id=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
-    <div id=\"contentModal\">
+        echo "
+<div class=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
+<div id=\"contentModal\">
+    <div>
         <div>
-            <div>
-                <p>";
+            <p>";
         // line 6
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "name", [], "any", false, false, false, 6), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "category_name", [], "any", false, false, false, 6), "html", null, true);
         echo "</p>
-                <p>";
-        // line 7
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "firstname", [], "any", false, false, false, 7), "html", null, true);
-        echo "</p>
-                <p>";
+            <span></span>
+            <p>Nom : ";
         // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "mail", [], "any", false, false, false, 8), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_name", [], "any", false, false, false, 8), "html", null, true);
         echo "</p>
-                <p>";
+            <p>Prénom : ";
         // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "phone", [], "any", false, false, false, 9), "html", null, true);
-        echo "phone</p>
-            </div>
-            <div>
-                <img src=\"";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "picture", [], "any", false, false, false, 12), "html", null, true);
-        echo "\" alt=\"image d'illustration\">
-            </div>
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_firstname", [], "any", false, false, false, 9), "html", null, true);
+        echo "</p>
+            <p>Adresse mail : ";
+        // line 10
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_mail", [], "any", false, false, false, 10), "html", null, true);
+        echo "</p>
+            <p>Téléphone : ";
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_phone", [], "any", false, false, false, 11), "html", null, true);
+        echo "</p>
+            <span></span>
         </div>
         <div>
-            <p>";
-        // line 16
-        echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
-        echo "title</p>
-            <p>";
-        // line 17
-        echo twig_escape_filter($this->env, ($context["description"] ?? null), "html", null, true);
-        echo "lorem</p>
+            <img src=\"media/user_uploads/";
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "picture", [], "any", false, false, false, 15), "html", null, true);
+        echo "\" alt=\"image d'illustration\">
         </div>
+    </div>
+    <div>
+        <h5>";
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "title", [], "any", false, false, false, 19), "html", null, true);
+        echo "</h5>
+        <p>";
+        // line 20
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "description", [], "any", false, false, false, 20), "html", null, true);
+        echo "</p>
     </div>
 </div>";
     }
@@ -89,29 +94,31 @@ class __TwigTemplate_2a89171b509df9a9ff4d1ef97e6e071c91df0511f43660c9e02c6ffa0fc
 
     public function getDebugInfo()
     {
-        return array (  73 => 17,  69 => 16,  62 => 12,  56 => 9,  52 => 8,  48 => 7,  44 => 6,  37 => 1,);
+        return array (  79 => 20,  75 => 19,  68 => 15,  61 => 11,  57 => 10,  53 => 9,  49 => 8,  44 => 6,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div id=\"modalDetail\" class=\"active\">
-    <div id=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
-    <div id=\"contentModal\">
+        return new Source("
+<div class=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
+<div id=\"contentModal\">
+    <div>
         <div>
-            <div>
-                <p>{{posts.name}}</p>
-                <p>{{posts.firstname}}</p>
-                <p>{{posts.mail}}</p>
-                <p>{{posts.phone}}phone</p>
-            </div>
-            <div>
-                <img src=\"{{posts.picture}}\" alt=\"image d'illustration\">
-            </div>
+            <p>{{posts.category_name}}</p>
+            <span></span>
+            <p>Nom : {{posts.user_name}}</p>
+            <p>Prénom : {{posts.user_firstname}}</p>
+            <p>Adresse mail : {{posts.user_mail}}</p>
+            <p>Téléphone : {{posts.user_phone}}</p>
+            <span></span>
         </div>
         <div>
-            <p>{{title}}title</p>
-            <p>{{description}}lorem</p>
+            <img src=\"media/user_uploads/{{posts.picture}}\" alt=\"image d'illustration\">
         </div>
+    </div>
+    <div>
+        <h5>{{posts.title}}</h5>
+        <p>{{posts.description}}</p>
     </div>
 </div>", "modal_detail_post.html.twig", "/var/www/html/application/templates/modal_detail_post.html.twig");
     }

@@ -177,7 +177,6 @@ class Post{
 
         // echo json_encode($req);
 
-        dump($req);
         $twig = new Twig('modal_detail_post.html.twig');
         $twig->render([
             'posts' => $req[0],
