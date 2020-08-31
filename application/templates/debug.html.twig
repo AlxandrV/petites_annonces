@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <div>
+            <p>{{post.category_name}}</p>
+            <span></span>
+            <p>Nom : {{post.user_name}}</p>
+            <p>Prénom : {{post.user_firstname}}</p>
+            <p>Adresse mail : {{post.user_mail}}</p>
+            <p>Téléphone : {{post.user_phone}}</p>
+            <span></span>
+        </div>
+        <div>
+            <img src="media/user_uploads/{{post.picture}}" alt="image d'illustration">
+        </div>
+    </div>
+    <div>
+        <h5>{{post.title}}</h5>
+        <p>{{post.description}}</p>
+    </div>
 </body>
 </html>

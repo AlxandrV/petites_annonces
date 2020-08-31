@@ -39,7 +39,7 @@ class Post{
 
             //Connexion
             $base = new Connexion();
-
+            
             //get category_id
             $req = $base->q("SELECT `id` FROM `category` WHERE `name` = :category",
             array(array('category',$category,\PDO::PARAM_STR)));

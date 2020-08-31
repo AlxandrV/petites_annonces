@@ -27,8 +27,6 @@ class __TwigTemplate_a2d0b70fb8cac0e673e67d4ec1d693ec2902528e10977a20c32c0417797
         $this->parent = false;
 
         $this->blocks = [
-            'head' => [$this, 'block_head'],
-            'scipt' => [$this, 'block_scipt'],
         ];
     }
 
@@ -39,55 +37,56 @@ class __TwigTemplate_a2d0b70fb8cac0e673e67d4ec1d693ec2902528e10977a20c32c0417797
         echo "<!DOCTYPE html>
 <html lang=\"en\">
 <head>
-    ";
-        // line 4
-        $this->displayBlock('head', $context, $blocks);
-        // line 10
-        echo "</head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Document</title>
+</head>
 <body>
-    <p>Title : ";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "title", [], "any", false, false, false, 12), "html", null, true);
+    <div>
+        <div>
+            <p>";
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "category_name", [], "any", false, false, false, 11), "html", null, true);
         echo "</p>
-    <p>Description: : ";
+            <span></span>
+            <p>Nom : ";
         // line 13
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "description", [], "any", false, false, false, 13), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user_name", [], "any", false, false, false, 13), "html", null, true);
         echo "</p>
-    <p>Picture: : ";
+            <p>Prénom : ";
         // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "picture", [], "any", false, false, false, 14), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user_firstname", [], "any", false, false, false, 14), "html", null, true);
         echo "</p>
-
-    ";
+            <p>Adresse mail : ";
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user_mail", [], "any", false, false, false, 15), "html", null, true);
+        echo "</p>
+            <p>Téléphone : ";
         // line 16
-        $this->displayBlock('scipt', $context, $blocks);
-        // line 22
-        echo "</body>
-</html>";
-    }
-
-    // line 4
-    public function block_head($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        // line 5
-        echo "        <meta charset=\"UTF-8\">
-        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <title>Document</title>
-        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
-    ";
-    }
-
-    // line 16
-    public function block_scipt($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        // line 17
-        echo "        <!-- JS, Popper.js, and jQuery -->
-        <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
-        <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
-        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\" integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\"></script>
-    ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user_phone", [], "any", false, false, false, 16), "html", null, true);
+        echo "</p>
+            <span></span>
+        </div>
+        <div>
+            <img src=\"media/user_uploads/";
+        // line 20
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "picture", [], "any", false, false, false, 20), "html", null, true);
+        echo "\" alt=\"image d'illustration\">
+        </div>
+    </div>
+    <div>
+        <h5>";
+        // line 24
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "title", [], "any", false, false, false, 24), "html", null, true);
+        echo "</h5>
+        <p>";
+        // line 25
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "description", [], "any", false, false, false, 25), "html", null, true);
+        echo "</p>
+    </div>
+</body>
+</html>
+";
     }
 
     public function getTemplateName()
@@ -102,7 +101,7 @@ class __TwigTemplate_a2d0b70fb8cac0e673e67d4ec1d693ec2902528e10977a20c32c0417797
 
     public function getDebugInfo()
     {
-        return array (  86 => 17,  82 => 16,  74 => 5,  70 => 4,  65 => 22,  63 => 16,  58 => 14,  54 => 13,  50 => 12,  46 => 10,  44 => 4,  39 => 1,);
+        return array (  84 => 25,  80 => 24,  73 => 20,  66 => 16,  62 => 15,  58 => 14,  54 => 13,  49 => 11,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -110,25 +109,31 @@ class __TwigTemplate_a2d0b70fb8cac0e673e67d4ec1d693ec2902528e10977a20c32c0417797
         return new Source("<!DOCTYPE html>
 <html lang=\"en\">
 <head>
-    {% block head %}
-        <meta charset=\"UTF-8\">
-        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <title>Document</title>
-        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
-    {% endblock %}
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Document</title>
 </head>
 <body>
-    <p>Title : {{ post.title }}</p>
-    <p>Description: : {{ post.description }}</p>
-    <p>Picture: : {{ post.picture }}</p>
-
-    {% block scipt %}
-        <!-- JS, Popper.js, and jQuery -->
-        <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
-        <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
-        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\" integrity=\"sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV\" crossorigin=\"anonymous\"></script>
-    {% endblock %}
+    <div>
+        <div>
+            <p>{{post.category_name}}</p>
+            <span></span>
+            <p>Nom : {{post.user_name}}</p>
+            <p>Prénom : {{post.user_firstname}}</p>
+            <p>Adresse mail : {{post.user_mail}}</p>
+            <p>Téléphone : {{post.user_phone}}</p>
+            <span></span>
+        </div>
+        <div>
+            <img src=\"media/user_uploads/{{post.picture}}\" alt=\"image d'illustration\">
+        </div>
+    </div>
+    <div>
+        <h5>{{post.title}}</h5>
+        <p>{{post.description}}</p>
+    </div>
 </body>
-</html>", "debug.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\debug.html.twig");
+</html>
+", "debug.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\debug.html.twig");
     }
 }

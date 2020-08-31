@@ -49,8 +49,9 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
                 echo "\" alt=\"illustration\" width=\"600\" height=\"398\">
         ";
             } else {
-                // line 7
-                echo "            <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
+                // line 6
+                echo "        
+            <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
         ";
             }
             // line 9
@@ -114,7 +115,7 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
 
     public function getDebugInfo()
     {
-        return array (  100 => 27,  91 => 24,  86 => 22,  82 => 21,  78 => 20,  71 => 16,  66 => 14,  57 => 9,  53 => 7,  47 => 5,  45 => 4,  41 => 2,  37 => 1,);
+        return array (  101 => 27,  92 => 24,  87 => 22,  83 => 21,  79 => 20,  72 => 16,  67 => 14,  58 => 9,  53 => 6,  47 => 5,  45 => 4,  41 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -124,7 +125,7 @@ class __TwigTemplate_092a0abfd16a46530675d5a714c76a67f7f32600432a9750b77538c47d6
     <div class=\"illustration\">
         {% if post.picture != 'placeholder.jpg' %}
             <img src=\"media/user_uploads/{{post.picture}}\" alt=\"illustration\" width=\"600\" height=\"398\">
-        {% else %}
+        {% else %}        
             <img src=\"media/user_uploads/placeholder.jpg\" alt=\"illustration\" width=\"600\" height=\"398\">
         {% endif %}
         <div class=\"categorie\">{{post.category_name}}</div>

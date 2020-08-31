@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="text-align: center;">Annonce {{post.category_name}}</h1>
+            <div>
+                <img src="media/user_uploads/{{post.picture}}" alt="image d'illustration" style="width:100%;">
+            </div>
+            <div>
+                <h2>{{post.title}}</h2>
+                <p>{{post.description}}</p>
+            </div>
+            <div style="background-color:#30343f; color:white; padding:0.4rem 2rem;">
+                <h2 style="text-align: center;">Contact:</h2>
+                <p><strong>Nom :</strong> {{post.user_name}}</p>
+                <p><strong>Prénom </strong>: {{post.user_firstname}}</p>
+                <p><strong>Adresse mail :</strong> <a style="color:white;"href="mailto:{{post.user_mail}}">{{post.user_mail}}</a></p>
+                <p><strong>Téléphone :</strong> {{post.user_phone}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
