@@ -55,15 +55,7 @@ $router->map('GET', '/del-[:unique_id]', function ($unique_id) {
 
 //DEBUG PAGE_________________________________________
 $router->map('GET', '/debug', function () {
-    // $categories = new Categories();
-
-    // $twig = new Twig('debug.html.twig');
-
-    // $twig->render([
-    //         'categories' => $categories->data,
-    //     ]);
-    // require_once '../application/class/PostList.php';
-    \App\Mail::sendEmail();
+    \App\PdfExport::pdf('4261e0efa1d84a7aab1e58b46d785b322bba','debug.html.twig');
 });
 //___________________________________________________
 
