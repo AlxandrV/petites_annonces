@@ -34,21 +34,59 @@ class __TwigTemplate_a2d0b70fb8cac0e673e67d4ec1d693ec2902528e10977a20c32c0417797
     {
         $macros = $this->macros;
         // line 1
-        echo "<body>
-    <p>Title : ";
-        // line 2
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "title", [], "any", false, false, false, 2), "html", null, true);
+        echo "<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <p>";
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "category_name", [], "any", false, false, false, 11), "html", null, true);
         echo "</p>
-    <p>Description: : ";
-        // line 3
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "description", [], "any", false, false, false, 3), "html", null, true);
+            <span></span>
+            <p>Nom : ";
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user_name", [], "any", false, false, false, 13), "html", null, true);
         echo "</p>
-    <p>Picture: : ";
-        // line 4
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "picture", [], "any", false, false, false, 4), "html", null, true);
+            <p>Prénom : ";
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user_firstname", [], "any", false, false, false, 14), "html", null, true);
         echo "</p>
-
-</body>";
+            <p>Adresse mail : ";
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user_mail", [], "any", false, false, false, 15), "html", null, true);
+        echo "</p>
+            <p>Téléphone : ";
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "user_phone", [], "any", false, false, false, 16), "html", null, true);
+        echo "</p>
+            <span></span>
+        </div>
+        <div>
+            <img src=\"media/user_uploads/";
+        // line 20
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "picture", [], "any", false, false, false, 20), "html", null, true);
+        echo "\" alt=\"image d'illustration\">
+        </div>
+    </div>
+    <div>
+        <h5>";
+        // line 24
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "title", [], "any", false, false, false, 24), "html", null, true);
+        echo "</h5>
+        <p>";
+        // line 25
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "description", [], "any", false, false, false, 25), "html", null, true);
+        echo "</p>
+    </div>
+</body>
+</html>
+";
     }
 
     public function getTemplateName()
@@ -63,16 +101,39 @@ class __TwigTemplate_a2d0b70fb8cac0e673e67d4ec1d693ec2902528e10977a20c32c0417797
 
     public function getDebugInfo()
     {
-        return array (  48 => 4,  44 => 3,  40 => 2,  37 => 1,);
+        return array (  84 => 25,  80 => 24,  73 => 20,  66 => 16,  62 => 15,  58 => 14,  54 => 13,  49 => 11,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<body>
-    <p>Title : {{ post.title }}</p>
-    <p>Description: : {{ post.description }}</p>
-    <p>Picture: : {{ post.picture }}</p>
-
-</body>", "debug.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\debug.html.twig");
+        return new Source("<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <p>{{post.category_name}}</p>
+            <span></span>
+            <p>Nom : {{post.user_name}}</p>
+            <p>Prénom : {{post.user_firstname}}</p>
+            <p>Adresse mail : {{post.user_mail}}</p>
+            <p>Téléphone : {{post.user_phone}}</p>
+            <span></span>
+        </div>
+        <div>
+            <img src=\"media/user_uploads/{{post.picture}}\" alt=\"image d'illustration\">
+        </div>
+    </div>
+    <div>
+        <h5>{{post.title}}</h5>
+        <p>{{post.description}}</p>
+    </div>
+</body>
+</html>
+", "debug.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\debug.html.twig");
     }
 }

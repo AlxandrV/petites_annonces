@@ -54,7 +54,7 @@ $router->map('GET', '/del-[:unique_id]', function ($unique_id) {
     //request post data
     $showPost = new ShowPost($unique_id);
     //render template
-    $twig = new Twig('modal_detail_post.html.twig');
+    $twig = new Twig('debug.html.twig');
     $twig->render([
             'post' => $showPost->data[0],
         ]);
@@ -62,7 +62,18 @@ $router->map('GET', '/del-[:unique_id]', function ($unique_id) {
 
 //DEBUG PAGE_________________________________________
 $router->map('GET', '/debug', function () {
-    \App\PdfExport::pdf('4261e0efa1d84a7aab1e58b46d785b322bba','debug.html.twig');
+    \App\PdfExport::pdf('4261e0efa1d84a7aab1e58b46d785b322bba','pdf.html.twig');
+});
+//___________________________________________________
+//DEBUG PDF PAGE_________________________________________
+$router->map('GET', '/pdf', function () {
+        //request post data
+        $showPost = new ShowPost('4261e0efa1d84a7aab1e58b46d785b322bba');
+        //render template
+        $twig = new Twig('pdf.html.twig');
+        $twig->render([
+                'post' => $showPost->data[0],
+            ]);
 });
 //___________________________________________________
 
@@ -85,6 +96,10 @@ $router->map('POST', '/ajax-post-delete', function(){
 //AJAX Post Show_________________________________________
 $router->map('POST', '/ajax-post-show', function(){
     \App\Post::ShowPost();
+});
+//AJAX PDF Download_________________________________________
+$router->map('POST', '/ajax-pdf', function(){
+    \App\PdfExport::pdf('pdf.html.twig');
 });
 //404 Page __________________________________
 $router->map('GET', '/[*]', function () {
