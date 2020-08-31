@@ -35,7 +35,7 @@ class __TwigTemplate_9ccc42cbef9711322c578f4f8b4f52800f090d2ea84e874342c4d475b75
         $macros = $this->macros;
         // line 1
         echo "<div id=\"modalAdd\" class=\"modalAdd\">
-    <div id=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
+    <div id=\"closeIcon\" class=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
     <form>
         <div class=\"modalDescription\">
             <div class=\"userDescription\">
@@ -134,7 +134,7 @@ class __TwigTemplate_9ccc42cbef9711322c578f4f8b4f52800f090d2ea84e874342c4d475b75
     public function getSourceContext()
     {
         return new Source("<div id=\"modalAdd\" class=\"modalAdd\">
-    <div id=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
+    <div id=\"closeIcon\" class=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
     <form>
         <div class=\"modalDescription\">
             <div class=\"userDescription\">
