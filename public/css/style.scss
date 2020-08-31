@@ -102,7 +102,7 @@ body{
     }
 
     .modalAdd{
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 100%;
         width: 100vw;
@@ -176,7 +176,7 @@ body{
     }
 
     #modalDetail{
-        position: absolute;
+        position: fixed;
         left: 100%;
         top: 0;
         width: 100vw;
@@ -206,18 +206,27 @@ body{
 
                 > div:first-child{
                     width: 50%;
+                    box-sizing: border-box;
+                    padding: 10px;
 
-                    p:first-child{
-                        background-color: rgba(148,150,158,1);
-                        box-sizing: border-box;
-                        padding: 10px;
-                        border-radius: 15px;
-                        width: max-content;
-                        height: max-content;
+                    >div{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        p{
+                            background-color: rgba(148,150,158,1);
+                            box-sizing: border-box;
+                            padding: 10px;
+                            border-radius: 15px;
+                            width: max-content;
+                            height: max-content;
+                            margin-top: 1rem;
+                        }
                     }
                     span{
                         display: block;
-                        width: 90%;
+                        width: 100%;
                         border-bottom: solid 1px rgba(48,52,63,1);
                         margin-bottom: 1rem;
                     }

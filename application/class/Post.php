@@ -165,6 +165,7 @@ class Post{
         //SHOW POST
         $req = $base->q(
                         "SELECT
+                            p.unique_id,
                             p.title,
                             p.description,
                             p.picture,
