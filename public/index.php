@@ -50,7 +50,7 @@ $router->map('GET', '/del-[:unique_id]', function ($unique_id) {
     //request post data
     $showPost = new ShowPost($unique_id);
     //render template
-    $twig = new Twig('debug.html.twig');
+    $twig = new Twig('modal_detail_post.html.twig');
     $twig->render([
             'post' => $showPost->data[0],
         ]);

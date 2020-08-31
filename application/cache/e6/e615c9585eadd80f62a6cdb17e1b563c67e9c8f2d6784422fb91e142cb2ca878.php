@@ -34,27 +34,21 @@ class __TwigTemplate_a2d0b70fb8cac0e673e67d4ec1d693ec2902528e10977a20c32c0417797
     {
         $macros = $this->macros;
         // line 1
-        echo "<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-
-</head>
-<body>
+        echo "<body>
     <p>Title : ";
-        // line 7
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "title", [], "any", false, false, false, 7), "html", null, true);
+        // line 2
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "title", [], "any", false, false, false, 2), "html", null, true);
         echo "</p>
     <p>Description: : ";
-        // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "description", [], "any", false, false, false, 8), "html", null, true);
+        // line 3
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "description", [], "any", false, false, false, 3), "html", null, true);
         echo "</p>
     <p>Picture: : ";
-        // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "picture", [], "any", false, false, false, 9), "html", null, true);
+        // line 4
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "picture", [], "any", false, false, false, 4), "html", null, true);
         echo "</p>
 
-</body>
-</html>";
+</body>";
     }
 
     public function getTemplateName()
@@ -69,22 +63,16 @@ class __TwigTemplate_a2d0b70fb8cac0e673e67d4ec1d693ec2902528e10977a20c32c0417797
 
     public function getDebugInfo()
     {
-        return array (  53 => 9,  49 => 8,  45 => 7,  37 => 1,);
+        return array (  48 => 4,  44 => 3,  40 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-
-</head>
-<body>
+        return new Source("<body>
     <p>Title : {{ post.title }}</p>
     <p>Description: : {{ post.description }}</p>
     <p>Picture: : {{ post.picture }}</p>
 
-</body>
-</html>", "debug.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\debug.html.twig");
+</body>", "debug.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\debug.html.twig");
     }
 }

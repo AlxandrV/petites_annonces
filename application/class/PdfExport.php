@@ -11,24 +11,30 @@ class PdfExport {
     public static function pdf($unique_id , $template){
         //request post data
     $showPost = new ShowPost($unique_id);
-    dump($showPost->data[0]);
+    // dump($showPost);
     //render template
-    $twig = new Twig($template);
-    // $pdf = $twig->render(['post' => $showPost->data[0],]);
-        // dump($twig->render(['post' => $showPost->data[0],]));
-    // Instantiate Dompdf with our options
-    // $dompdf = new Dompdf();
+    $loader = new \Twig\Loader\FilesystemLoader('../application/templates');
+        $twig = new \Twig\Environment($loader, [
+            'cache' => '../application/cache',
+            'debug' => true,
+        ]);
+        $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-    // $dompdf->loadHtml($pdf);
+        $temp = $twig->load($template);
+        
+    // Instantiate Dompdf with our options
+    $dompdf = new Dompdf();
+
+    $dompdf->loadHtml($temp->render(['post' => $showPost->data[0],]));
 
     // // (Optional) Setup the paper size and orientation
-    // $dompdf->setPaper('A4', 'landscape');
+    $dompdf->setPaper('A4', 'landscape');
 
     // // Render the HTML as PDF
-    // $dompdf->render();
+    $dompdf->render();
 
     // // Output the generated PDF to Browser
-    // $dompdf->stream('annonce'.$unique_id.'pdf');
+    $dompdf->stream('annonce'.$unique_id.'pdf');
     }
 
 }
