@@ -48,6 +48,10 @@ addEventListener('load', function loadProducts(){
                             modal.addEventListener('click', () => {
                                 modalDetail.classList.remove('active');
                             });
+
+                            modal.children[1].addEventListener('click', () => {
+                                event.stopPropagation();
+                            });
                         }
                     }
                     

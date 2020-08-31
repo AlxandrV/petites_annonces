@@ -3,12 +3,15 @@
 <div id="contentModal">
     <div>
         <div>
-            <p>{{posts.category_name}}</p>
+            <div>
+                <p>{{posts.category_name}}</p>
+                <a href="/ajax-pdf?unique_id={{ posts.unique_id }}" target="_blank" rel="noopener noreferrer">Télécharger l'annonce en PDF</a>
+            </div>
             <span></span>
             <p>Nom : {{posts.user_name}}</p>
             <p>Prénom : {{posts.user_firstname}}</p>
-            <p>Adresse mail : {{posts.user_mail}}</p>
-            <p>Téléphone : {{posts.user_phone}}</p>
+            <p>Adresse mail : <a href="mailto:{{ posts.user_mail }}">{{posts.user_mail}}</a></p>
+            <p>Téléphone : <a href="tel:{{ posts.user_phone }}">{{posts.user_phone}}</a></p>
             <span></span>
         </div>
         <div>

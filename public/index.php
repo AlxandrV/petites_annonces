@@ -99,7 +99,7 @@ $router->map('POST', '/ajax-post-show', function(){
     \App\Post::ShowPost();
 });
 //AJAX PDF Download_________________________________________
-$router->map('POST', '/ajax-pdf', function(){
+$router->map('GET', '/ajax-pdf', function(){
     \App\PdfExport::pdf();
 });
 //404 Page __________________________________

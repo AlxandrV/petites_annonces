@@ -7,8 +7,8 @@ use Dompdf\Dompdf;
 class PdfExport {
 
     public static function pdf(){
-    if(isset($_POST['unique_id'])){
-        $unique_id = $_POST['unique_id'];
+    if(isset($_GET['unique_id'])){
+        $unique_id = $_GET['unique_id'];
 
     //request post data
     $showPost = new ShowPost($unique_id);
