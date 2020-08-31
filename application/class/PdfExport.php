@@ -6,7 +6,7 @@ use Dompdf\Dompdf;
 
 class PdfExport {
 
-    public static function pdf($template){
+    public static function pdf(){
     if(isset($_POST['unique_id'])){
         $unique_id = $_POST['unique_id'];
 
@@ -21,7 +21,7 @@ class PdfExport {
     ]);
     $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-    $temp = $twig->load($template);
+    $temp = $twig->load('pdf.html.twig');
 
     // Instantiate Dompdf with our options
     $dompdf = new Dompdf();
