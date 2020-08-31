@@ -39,7 +39,7 @@ class Post{
 
             //Connexion
             $base = new Connexion();
-            
+
             //get category_id
             $req = $base->q("SELECT `id` FROM `category` WHERE `name` = :category",
             array(array('category',$category,\PDO::PARAM_STR)));
@@ -69,7 +69,7 @@ class Post{
             );
         }
         $sendMail = new SMail('valid',$user_mail,$user_firstname,$user_n,$unique_id);
-        echo json_encode($validation.' '.$sendMail);
+        echo json_encode($validation);
     }
 
 
@@ -92,9 +92,12 @@ class Post{
                 echo json_encode("Cette annonce n'existe pas");
                 return;
             }
-            // get values
+            //get values
             $title = $_POST['title'];
             $descript = $_POST['description'];
+            $user_mail  = $_POST['user_mail'];
+            $user_n  = $_POST['user_name'];
+            $user_firstname  = $_POST['user_firstname'];
             $category  = $_POST['category'];
 
 
@@ -124,6 +127,7 @@ class Post{
                 )
             );
         }
+        $sendMail = new SMail('delete',$user_mail,$user_firstname,$user_n,$unique_id);
         echo json_encode($validation);
     }
 
@@ -143,19 +147,7 @@ class Post{
         $base->qw('DELETE FROM post WHERE unique_id = :unique_id',
             array(array('unique_id',$unique_id,\PDO::PARAM_STR)));
 
-        $req = $base->q(
-                        "SELECT `user_mail`,
-                                `user_name`,
-                                `user_firstname`,
-                        FROM post
-                        WHERE `unique_id` = :unique_id",
-            array(array('unique_id',$unique_id,\PDO::PARAM_STR)));
-        $user_mail = $req[0]->user_mail;
-        $user_firstname = $req[0]->user_firstname;
-        $user_n = $req[0]->user_name;
-
-        $sendMail = new SMail('delete',$user_mail,$user_firstname,$user_n,$unique_id);
-        echo json_encode('OK '.$sendMail);
+        echo json_encode('OK ');
     }
 
     public static function ShowPost(){
