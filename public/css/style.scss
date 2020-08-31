@@ -319,4 +319,39 @@ body{
         cursor: pointer;
     }
 
+    .popUp{
+        position: absolute;
+        left: 100%;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .5);
+        transition: transform 1s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 1s ease-in-out;
+
+        &.active{
+            transform: translateX(-100%);
+        }
+
+        > div{
+            width: 30%;
+            box-sizing: border-box;
+            padding: 30px 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p{
+                background-color: var(--primary-color);
+                border-radius: 5px;
+                padding: 20px;
+                margin: 0;
+            }
+        }
+    }
 }

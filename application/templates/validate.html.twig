@@ -43,7 +43,6 @@
                             <div class="form-group">
                                 <label for="category">Choissisez une catégorie</label>
                                 <select class="form-control" id="category" name="category">
-                                    <!-- <option value="{{ post.category_name }}">{{ post.category_name }}</option> -->
                                     {% for category in categories %}
                                         {% if category.name == post.category_name %}
                                             <option value="{{category.name}}" selected>{{category.name}}</option>
@@ -74,6 +73,7 @@
                         <textarea class="form-control" id="description" name="description" rows="8" cols="40" placeholder="Descriptif de l'annonce" required>{{ post.description }}</textarea>
                     </div>
                 </div>
+                <input type="hidden" name="unique_id" value="{{ unique_id }}">
             </div>
         
             <div class="modalPost">
@@ -83,12 +83,16 @@
         </form>
     </div>
 
+    <div class="popUp">
+        <div><p></p></div>
+    </div>
+
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        <script src="js/script.js"></script>
+        <script src="js/validate.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     {% endblock %}
 </body>

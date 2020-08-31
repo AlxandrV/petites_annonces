@@ -42,6 +42,7 @@ $router->map('GET', '/valid-[:unique_id]', function ($unique_id) {
     $twig->render([
             'post' => $showPost->data[0],
             'categories' => $categories->data,
+            'unique_id' => $unique_id,
         ]);
 });
 
