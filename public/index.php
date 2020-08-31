@@ -42,7 +42,6 @@ $router->map('GET', '/valid-[:unique_id]', function ($unique_id) {
     $twig->render([
             'post' => $showPost->data[0],
             'categories' => $categories->data,
-            'unique_id' => $unique_id,
         ]);
 });
 
@@ -63,10 +62,20 @@ $router->map('GET', '/del-[:unique_id]', function ($unique_id) {
 
 //DEBUG PAGE_________________________________________
 $router->map('GET', '/debug', function () {
-    //debug
+    \App\PdfExport::pdf();
 });
 //___________________________________________________
-
+//DEBUG PDF PAGE_________________________________________
+$router->map('GET', '/pdf', function () {
+        //request post data
+        $showPost = new ShowPost('4261e0efa1d84a7aab1e58b46d785b322bba');
+        //render template
+        $twig = new Twig('pdf.html.twig');
+        $twig->render([
+                'post' => $showPost->data[0],
+            ]);
+});
+//___________________________________________________
 
 //AJAX PostList_________________________________________
 $router->map('POST', '/ajax-postList', function(){
