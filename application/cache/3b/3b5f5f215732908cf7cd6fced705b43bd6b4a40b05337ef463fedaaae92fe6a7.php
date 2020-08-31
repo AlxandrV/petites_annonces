@@ -35,7 +35,7 @@ class __TwigTemplate_2a89171b509df9a9ff4d1ef97e6e071c91df0511f43660c9e02c6ffa0fc
         $macros = $this->macros;
         // line 1
         echo "
-<div class=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
+<div class=\"closeIcon\"><img src=\"media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
 <div id=\"contentModal\">
     <div>
         <div>
@@ -110,7 +110,7 @@ class __TwigTemplate_2a89171b509df9a9ff4d1ef97e6e071c91df0511f43660c9e02c6ffa0fc
     public function getSourceContext()
     {
         return new Source("
-<div class=\"closeIcon\"><img src=\"../../public/media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
+<div class=\"closeIcon\"><img src=\"media/cross-icon.png\" alt=\"Icon en forme de croix\" width=\"48\" height=\"48\"></div>
 <div id=\"contentModal\">
     <div>
         <div>
