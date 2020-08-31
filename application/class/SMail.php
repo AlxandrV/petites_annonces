@@ -43,7 +43,7 @@ class SMail
                 $mail->Subject = 'Confirmez votre annonce';
                 $mail->Body ='<p>Bonjour '.$prenom.' !</p><a href="'.$link .'">Cliquez sur ce lien pour confirmer votre annonce.</a>';
             } elseif ($type === 'delete') {
-                $link = $domain . '/delete-' . $code;
+                $link = $domain . '/del-' . $code;
                 $mail->Subject = 'Votre annonce a été publiée';
                 $mail->Body ='<p>Bonjour '.$prenom.' !</p><a href="'.$link .'">Cliquez sur ce lien pour supprimer votre annonce.</a>';
             } else {
