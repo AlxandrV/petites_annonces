@@ -28,6 +28,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
 
         $this->blocks = [
             'head' => [$this, 'block_head'],
+            'content' => [$this, 'block_content'],
             'scipt' => [$this, 'block_scipt'],
         ];
     }
@@ -47,25 +48,13 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
 <body>
     ";
         // line 13
-        $this->loadTemplate("header.html.twig", "base.html.twig", 13)->display($context);
-        // line 14
+        $this->displayBlock('content', $context, $blocks);
+        // line 22
         echo "
     ";
-        // line 15
-        $this->loadTemplate("content.html.twig", "base.html.twig", 15)->display($context);
-        // line 16
-        echo "
-    ";
-        // line 17
-        $this->loadTemplate("modal_add.html.twig", "base.html.twig", 17)->display($context);
-        // line 18
-        echo "
-    <div id=\"modalDetail\"></div>
-
-    ";
-        // line 21
+        // line 23
         $this->displayBlock('scipt', $context, $blocks);
-        // line 29
+        // line 31
         echo "</body>
 </html>";
     }
@@ -83,11 +72,34 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
     ";
     }
 
-    // line 21
+    // line 13
+    public function block_content($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 14
+        echo "        ";
+        $this->loadTemplate("header.html.twig", "base.html.twig", 14)->display($context);
+        // line 15
+        echo "
+        ";
+        // line 16
+        $this->loadTemplate("content.html.twig", "base.html.twig", 16)->display($context);
+        // line 17
+        echo "
+        ";
+        // line 18
+        $this->loadTemplate("modal_add.html.twig", "base.html.twig", 18)->display($context);
+        // line 19
+        echo "
+        <div id=\"modalDetail\"></div>
+    ";
+    }
+
+    // line 23
     public function block_scipt($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 22
+        // line 24
         echo "        <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
@@ -102,14 +114,9 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
         return "base.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  91 => 22,  87 => 21,  78 => 5,  74 => 4,  69 => 29,  67 => 21,  62 => 18,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
+        return array (  103 => 24,  99 => 23,  93 => 19,  91 => 18,  88 => 17,  86 => 16,  83 => 15,  80 => 14,  76 => 13,  67 => 5,  63 => 4,  58 => 31,  56 => 23,  53 => 22,  51 => 13,  47 => 11,  45 => 4,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -126,13 +133,15 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
     {% endblock %}
 </head>
 <body>
-    {% include 'header.html.twig' %}
+    {% block content %}
+        {% include 'header.html.twig' %}
 
-    {% include 'content.html.twig' %}
+        {% include 'content.html.twig' %}
 
-    {% include 'modal_add.html.twig' %}
+        {% include 'modal_add.html.twig' %}
 
-    <div id=\"modalDetail\"></div>
+        <div id=\"modalDetail\"></div>
+    {% endblock %}
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->

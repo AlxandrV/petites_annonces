@@ -10,13 +10,15 @@
     {% endblock %}
 </head>
 <body>
-    {% include 'header.html.twig' %}
+    {% block content %}
+        {% include 'header.html.twig' %}
 
-    {% include 'content.html.twig' %}
+        {% include 'content.html.twig' %}
 
-    {% include 'modal_add.html.twig' %}
+        {% include 'modal_add.html.twig' %}
 
-    <div id="modalDetail"></div>
+        <div id="modalDetail"></div>
+    {% endblock %}
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->

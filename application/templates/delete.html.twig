@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<div id="delete">
+    <div>
+        <div>
+            <div>
+                <div>
+                    <p>{{post.category_name}}</p>
+                </div>
+                <span></span>
+                <p>Nom : {{post.user_name}}</p>
+                <p>Prénom : {{post.user_firstname}}</p>
+                <p>Adresse mail : <a href="mailto:{{ post.user_mail }}">{{post.user_mail}}</a></p>
+                <p>Téléphone : <a href="tel:{{ post.user_phone }}">{{post.user_phone}}</a></p>
+                <span></span>
+            </div>
+            <div>
+                <img src="media/user_uploads/{{post.picture}}" alt="image d'illustration">
+            </div>
+        </div>
+        <div>
+            <h5>{{post.title}}</h5>
+            <p>{{post.description}}</p>
+        </div>
+        <div>
+            <p>Supprimer mon annonce ?</p>
+            <button class="btn btn-danger" id="deleteButton">Valider</button>
+        </div>
+    </div>
+</div>
+<div class="deleteValidate">
+    <form>
+        <input type="hidden" name="unique_id" value="{{ post.unique_id }}">
+        <p>Confirmer la suppression ?</p>
+        <div class="d-flex justify-content-around">
+            <input type="submit" class="btn btn-danger" value="OUI">
+            <button class="btn btn-secondary" id="deleteNo">NON</button>
+        </div>
+    </form>
+</div>
+<script src="js/delete.js"></script>
+{% endblock %}

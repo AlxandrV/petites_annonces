@@ -29,8 +29,6 @@ $router->map('GET', '/valid-[:unique_id]', function ($unique_id) {
     if((!\App\ShowPost::Exists($unique_id))||(\App\ShowPost::IsValidated($unique_id))){
         header('Location: /');
     }
-    //categories request
-    $categories = new Categories();
     //request post data
     $showPost = new ShowPost($unique_id);
 
@@ -52,7 +50,7 @@ $router->map('GET', '/del-[:unique_id]', function ($unique_id) {
     //request post data
     $showPost = new ShowPost($unique_id);
     //render template
-    $twig = new Twig('debug.html.twig');
+    $twig = new Twig('delete.html.twig');
     $twig->render([
             'post' => $showPost->data[0],
         ]);
