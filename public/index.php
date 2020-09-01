@@ -59,7 +59,7 @@ $router->map('GET', '/del-[:unique_id]', function ($unique_id) {
 //DEBUG PAGE_________________________________________
 $router->map('GET', '/debug', function () {
     //debug content
-    require_once('Cron.php');
+    // require_once('Cron.php');
 });
 //___________________________________________________
 

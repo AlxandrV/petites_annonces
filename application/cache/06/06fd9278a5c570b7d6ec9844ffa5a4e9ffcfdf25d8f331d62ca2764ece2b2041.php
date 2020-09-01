@@ -28,6 +28,7 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
 
         $this->blocks = [
             'head' => [$this, 'block_head'],
+            'content' => [$this, 'block_content'],
             'scipt' => [$this, 'block_scipt'],
         ];
     }
@@ -42,30 +43,18 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
     ";
         // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 11
+        // line 12
         echo "</head>
 <body>
     ";
-        // line 13
-        $this->loadTemplate("header.html.twig", "base.html.twig", 13)->display($context);
         // line 14
+        $this->displayBlock('content', $context, $blocks);
+        // line 23
         echo "
     ";
-        // line 15
-        $this->loadTemplate("content.html.twig", "base.html.twig", 15)->display($context);
-        // line 16
-        echo "
-    ";
-        // line 17
-        $this->loadTemplate("modal_add.html.twig", "base.html.twig", 17)->display($context);
-        // line 18
-        echo "
-    <div id=\"modalDetail\"></div>
-
-    ";
-        // line 21
+        // line 24
         $this->displayBlock('scipt', $context, $blocks);
-        // line 29
+        // line 32
         echo "</body>
 </html>";
     }
@@ -77,17 +66,41 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
         // line 5
         echo "        <meta charset=\"UTF-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <title>Document</title>
+        <title>AnnonceTout</title>
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
         <link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\">
+        <link rel=\"icon\" type=\"image/png\" href=\"media/favicon.png\" />
     ";
     }
 
-    // line 21
+    // line 14
+    public function block_content($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 15
+        echo "        ";
+        $this->loadTemplate("header.html.twig", "base.html.twig", 15)->display($context);
+        // line 16
+        echo "
+        ";
+        // line 17
+        $this->loadTemplate("content.html.twig", "base.html.twig", 17)->display($context);
+        // line 18
+        echo "
+        ";
+        // line 19
+        $this->loadTemplate("modal_add.html.twig", "base.html.twig", 19)->display($context);
+        // line 20
+        echo "
+        <div id=\"modalDetail\"></div>
+    ";
+    }
+
+    // line 24
     public function block_scipt($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 22
+        // line 25
         echo "        <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
@@ -102,14 +115,9 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
         return "base.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  91 => 22,  87 => 21,  78 => 5,  74 => 4,  69 => 29,  67 => 21,  62 => 18,  60 => 17,  57 => 16,  55 => 15,  52 => 14,  50 => 13,  46 => 11,  44 => 4,  39 => 1,);
+        return array (  104 => 25,  100 => 24,  94 => 20,  92 => 19,  89 => 18,  87 => 17,  84 => 16,  81 => 15,  77 => 14,  67 => 5,  63 => 4,  58 => 32,  56 => 24,  53 => 23,  51 => 14,  47 => 12,  45 => 4,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -120,19 +128,22 @@ class __TwigTemplate_ea89abb853b6f80e609215b2e78fc793709b4f1770ec48984d777aa3d9e
     {% block head %}
         <meta charset=\"UTF-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <title>Document</title>
+        <title>AnnonceTout</title>
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
         <link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\">
+        <link rel=\"icon\" type=\"image/png\" href=\"media/favicon.png\" />
     {% endblock %}
 </head>
 <body>
-    {% include 'header.html.twig' %}
+    {% block content %}
+        {% include 'header.html.twig' %}
 
-    {% include 'content.html.twig' %}
+        {% include 'content.html.twig' %}
 
-    {% include 'modal_add.html.twig' %}
+        {% include 'modal_add.html.twig' %}
 
-    <div id=\"modalDetail\"></div>
+        <div id=\"modalDetail\"></div>
+    {% endblock %}
 
     {% block scipt %}
         <!-- JS, Popper.js, and jQuery -->
