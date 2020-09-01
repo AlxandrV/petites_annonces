@@ -29,6 +29,10 @@ $router->map('GET', '/valid-[:unique_id]', function ($unique_id) {
     if((!\App\ShowPost::Exists($unique_id))||(\App\ShowPost::IsValidated($unique_id))){
         header('Location: /');
     }
+
+    //categories request
+    $categories = new Categories();
+
     //request post data
     $showPost = new ShowPost($unique_id);
 
