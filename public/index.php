@@ -26,16 +26,13 @@ $router->map('GET', '/', function () {
 //Validate Pages __________________________________
 $router->map('GET', '/valid-[:unique_id]', function ($unique_id) {
     //test if unique_id exists
-    if(!\App\ShowPost::Exists($unique_id)){
+    if((!\App\ShowPost::Exists($unique_id))||(\App\ShowPost::IsValidated($unique_id))){
         header('Location: /');
     }
     //categories request
     $categories = new Categories();
     //request post data
     $showPost = new ShowPost($unique_id);
-
-    //categories request
-    $categories = new Categories();
 
     //render template
     $twig = new Twig('validate.html.twig');
@@ -49,7 +46,7 @@ $router->map('GET', '/valid-[:unique_id]', function ($unique_id) {
 //Delete Pages __________________________________
 $router->map('GET', '/del-[:unique_id]', function ($unique_id) {
     //test if unique_id exists
-    if(!\App\ShowPost::Exists($unique_id)){
+    if((!\App\ShowPost::Exists($unique_id))||(!\App\ShowPost::IsValidated($unique_id))){
         header('Location: /');
     }
     //request post data
