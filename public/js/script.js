@@ -1,16 +1,6 @@
-// addEventListener('load', function(e){
-//     e.preventDefault();
-//     console.log('coucou');
-//     let xhr = new XMLHttpRequest();
-//     xhr.open('POST', '../../application/class/test.php');
-//     xhr.send();
-
-//     xhr.onreadystatechange = function() {
-//         if (this.readyState == 4 && this.status == 200) {
-//             console.log('lol');
-//         }
-//     };
-// });
+// Compte initial de page pour l'affichage de Post ________________________________
+let nbrPage = 10;
+let search = "";
 
 // AJAX chargement initial des annonces ___________________________________________
 const content = document.getElementsByTagName('SECTION');
@@ -55,7 +45,6 @@ addEventListener('load', function loadProducts(){
                         }
                     }
                     
-                    console.log(element)
                 });
             });
         }
@@ -106,3 +95,70 @@ form.addEventListener('submit', (e) => {
         }
     };
 });
+
+// Boutton Read more _______________________________________________________
+const buttonLoad = document.getElementById('loadMore');
+
+buttonLoad.addEventListener('click', () => {
+    let xhr = new XMLHttpRequest();
+
+    let data = new FormData();
+    data.append('search', search);
+    data.append('pageStart', nbrPage);
+
+    xhr.open('POST', 'ajax-postList', true);
+    xhr.send(data);
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            const lastContent = content[0].innerHTML;
+
+            content[0].innerHTML = lastContent + xhr.responseText;
+
+            nbrPage += 10;
+
+            console.log(nbrPage);
+            // Modal détail annonce selon le click
+            const posts = document.getElementsByClassName('product');
+            Array.from(posts).forEach(function (element) {
+                element.addEventListener('click', () => {
+                    const inputId = element.querySelector('.idAjaxModal').value;
+
+                    let formData = new FormData();
+                    formData.append('id', inputId);
+
+                    let xhr2 = new XMLHttpRequest();
+                    xhr2.open('POST', 'ajax-post-show', true);
+                    xhr2.send(formData);   
+                    
+                    xhr2.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            let modal = document.getElementById('modalDetail');
+                            modal.innerHTML = xhr2.responseText;
+                            modal.classList.add('active');
+        
+                            modal.addEventListener('click', () => {
+                                modalDetail.classList.remove('active');
+                            });
+
+                            modal.children[1].addEventListener('click', () => {
+                                event.stopPropagation();
+                            });
+                        }
+                    }
+                    
+                });
+            });
+        }
+    }
+});
+
+// Affichage par catégorie ____________________________________________________
+const inputCategorie = document.querySelector('#listCategorie').nextElementSibling.children[2];
+console.log(inputCategorie);
+
+// for(let categorie in inputCategorie[0]){
+//     categorie.addEventListener('click', () => {
+//         console.log(categorie);
+//     });
+// }

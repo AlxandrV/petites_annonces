@@ -36,7 +36,9 @@ class __TwigTemplate_e7bc217f480c34514f1fca6f69eb0963e14a9dff5f34696e59fe90b2b2a
         // line 1
         echo "<section class=\"container d-flex flex-wrap justify-content-between\">
 
-</section>";
+</section>
+
+<button id=\"loadMore\" class=\"btn btn-light\">Charger les 10 suivants</button>";
     }
 
     public function getTemplateName()
@@ -53,6 +55,8 @@ class __TwigTemplate_e7bc217f480c34514f1fca6f69eb0963e14a9dff5f34696e59fe90b2b2a
     {
         return new Source("<section class=\"container d-flex flex-wrap justify-content-between\">
 
-</section>", "content.html.twig", "/var/www/html/application/templates/content.html.twig");
+</section>
+
+<button id=\"loadMore\" class=\"btn btn-light\">Charger les 10 suivants</button>", "content.html.twig", "/var/www/html/application/templates/content.html.twig");
     }
 }
