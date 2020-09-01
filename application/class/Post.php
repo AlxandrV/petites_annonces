@@ -44,9 +44,13 @@ class Post{
             $req = $base->q("SELECT `id` FROM `category` WHERE `name` = :category",
             array(array('category',$category,\PDO::PARAM_STR)));
             $category_id = $req[0]->id;
+            //get last id
+            $req = $base->q("SELECT MAX(id) FROM `post`");
+            $id = $req[0]->id;
+            $id += 1;
 
             //set unique id
-            $unique_id=bin2hex(openssl_random_pseudo_bytes(18));
+            $unique_id = \App\Crypt::hashCode($user_mail,$id);
 
             //set date_creation
             $date_creation=date("Y-m-d");
@@ -180,8 +184,6 @@ class Post{
                         INNER JOIN category cat ON p.category_id = cat.ID
                         WHERE p.id LIKE :id",
             array(array('id',$id,\PDO::PARAM_STR)));
-
-        // echo json_encode($req);
 
         $twig = new Twig('modal_detail_post.html.twig');
         $twig->render([

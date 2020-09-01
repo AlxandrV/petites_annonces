@@ -43,4 +43,22 @@ class ShowPost
         }
         return false;
     }
+
+    public static function IsValidated($unique_id){
+
+        //Connexion
+        $base = new Connexion();
+
+        //Test if unique_id exists
+        $req = $base->q("SELECT `is_validated` FROM `post` WHERE `unique_id` = :unique_id",
+            array(array('unique_id',$unique_id,\PDO::PARAM_STR)));
+
+        $valid = $req[0]->is_validated;
+
+        if($valid === 1){
+            return true;
+        }
+        return false;
+    }
+
 }
