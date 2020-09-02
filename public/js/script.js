@@ -2,14 +2,17 @@
 let nbrPage = 10;
 let search = "";
 
-// AJAX chargement initial des annonces ___________________________________________
+// fonction AJAX des annonces ___________________________________________
 const content = document.getElementsByTagName('SECTION');
 
-addEventListener('load', function loadProducts(){
+function loadProducts(){
+    let formData = new FormData();
+    formData.append('category', search);
+
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'ajax-postList', true);
     // xhr.send("search=" + search + "&pageStart=" + page);
-    xhr.send();
+    xhr.send(formData);
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -49,6 +52,11 @@ addEventListener('load', function loadProducts(){
             });
         }
     }
+}
+
+// Chargement initial des annonces ___________________________________________________
+addEventListener('load', () => {
+    loadProducts();
 });
 
 // Affichage du modal d'ajout d'annonce ______________________________________________
@@ -154,11 +162,14 @@ buttonLoad.addEventListener('click', () => {
 });
 
 // Affichage par catégorie ____________________________________________________
-const inputCategorie = document.querySelector('#listCategorie').nextElementSibling.children[2];
+const inputCategorie = document.querySelector('#listCategorie').nextElementSibling.children;
 console.log(inputCategorie);
 
-// for(let categorie in inputCategorie[0]){
-//     categorie.addEventListener('click', () => {
-//         console.log(categorie);
-//     });
-// }
+Array.from(inputCategorie).forEach(function (element) {
+    element.addEventListener('click', () => {
+        search = element.value;
+        loadProducts();
+        
+        nbrPage = 10;
+    });
+});

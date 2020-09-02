@@ -43,18 +43,18 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
     ";
         // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 11
+        // line 12
         echo "</head>
 <body>
     ";
-        // line 13
+        // line 14
         $this->displayBlock('content', $context, $blocks);
-        // line 22
+        // line 23
         echo "
     ";
-        // line 23
+        // line 24
         $this->displayBlock('scipt', $context, $blocks);
-        // line 31
+        // line 32
         echo "</body>
 </html>";
     }
@@ -66,40 +66,41 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
         // line 5
         echo "        <meta charset=\"UTF-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <title>Document</title>
+        <title>AnnonceTout</title>
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
         <link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\">
+        <link rel=\"icon\" type=\"image/png\" href=\"media/favicon.png\" />
     ";
     }
 
-    // line 13
+    // line 14
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 14
-        echo "        ";
-        $this->loadTemplate("header.html.twig", "base.html.twig", 14)->display($context);
         // line 15
-        echo "
-        ";
+        echo "        ";
+        $this->loadTemplate("header.html.twig", "base.html.twig", 15)->display($context);
         // line 16
-        $this->loadTemplate("content.html.twig", "base.html.twig", 16)->display($context);
-        // line 17
         echo "
         ";
+        // line 17
+        $this->loadTemplate("content.html.twig", "base.html.twig", 17)->display($context);
         // line 18
-        $this->loadTemplate("modal_add.html.twig", "base.html.twig", 18)->display($context);
+        echo "
+        ";
         // line 19
+        $this->loadTemplate("modal_add.html.twig", "base.html.twig", 19)->display($context);
+        // line 20
         echo "
         <div id=\"modalDetail\"></div>
     ";
     }
 
-    // line 23
+    // line 24
     public function block_scipt($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 24
+        // line 25
         echo "        <!-- JS, Popper.js, and jQuery -->
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\" integrity=\"sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN\" crossorigin=\"anonymous\"></script>
@@ -116,7 +117,7 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
 
     public function getDebugInfo()
     {
-        return array (  103 => 24,  99 => 23,  93 => 19,  91 => 18,  88 => 17,  86 => 16,  83 => 15,  80 => 14,  76 => 13,  67 => 5,  63 => 4,  58 => 31,  56 => 23,  53 => 22,  51 => 13,  47 => 11,  45 => 4,  40 => 1,);
+        return array (  104 => 25,  100 => 24,  94 => 20,  92 => 19,  89 => 18,  87 => 17,  84 => 16,  81 => 15,  77 => 14,  67 => 5,  63 => 4,  58 => 32,  56 => 24,  53 => 23,  51 => 14,  47 => 12,  45 => 4,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -127,9 +128,10 @@ class __TwigTemplate_afde0bcdc102db81a9ae40b1062493a11884e213c7d0246ab4e19352b2a
     {% block head %}
         <meta charset=\"UTF-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-        <title>Document</title>
+        <title>AnnonceTout</title>
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" integrity=\"sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z\" crossorigin=\"anonymous\">
         <link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\">
+        <link rel=\"icon\" type=\"image/png\" href=\"media/favicon.png\" />
     {% endblock %}
 </head>
 <body>

@@ -1,27 +1,26 @@
 {% for post in posts %}
-<div class="product">
-    <div class="illustration">
-        {% if post.picture != 'placeholder.jpg' %}
+<div class="product d-flex justify-content-center">
+    <div>
+
+        <div class="illustration">
+            {% if post.picture != 'placeholder.jpg' %}
             <img src="media/user_uploads/{{post.picture}}" alt="illustration" width="600" height="398">
-        {% else %}        
+            {% else %}        
             <img src="media/user_uploads/placeholder.jpg" alt="illustration" width="600" height="398">
-        {% endif %}
-        <div class="categorie">{{post.category_name}}</div>
-    </div>
-
-    <div class="detailPost">
-        <div class="titlePost">
-            <p><strong>{{post.title}}</strong></p>
+            {% endif %}
+            <div class="categorie">{{post.category_name}}</div>
         </div>
-        <p class="description">{{post.description}}</p>
-
+        
+        <div class="detailPost">
+            <div class="titlePost">
+                <p><strong>{{post.title}}</strong></p>
+            </div>
+            <p class="description">{{post.description}}</p>
+            
+        </div>
+        
+        <input class="idAjaxModal" type="hidden" value="{{post.id}}"> 
     </div>
-
-    <!-- <p><strong>id: </strong>{{post.id}}</p><br>
-    <p><strong>picture: </strong>{{post.picture}}</p><br>
-    <p><strong>date_creation: </strong>{{post.date_creation}}</p><br>
-    <br><hr> -->
-    <input class="idAjaxModal" type="hidden" value="{{post.id}}"> 
 </div>
 {% endfor %}
 

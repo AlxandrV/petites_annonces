@@ -36,7 +36,7 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
         // line 1
         echo "<header>
     <div id=\"first\" class=\"d-flex justify-content-between align-items-center\">
-        <div id=\"logo\"><img src=\"media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
+        <div id=\"logo\"><img src=\"media/logo.png\" alt=\"Logo\" width=\"300\" height=\"119\"></div>
         <button id=\"addPost\" class=\"btn\">Poster une annonce</button>
     </div>
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
@@ -50,7 +50,9 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 12
-            echo "              <button class=\"dropdown-item\" type=\"button\">";
+            echo "              <button class=\"dropdown-item\" type=\"button\" value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 12), "html", null, true);
+            echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 12), "html", null, true);
             echo "</button>
               ";
@@ -77,14 +79,14 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
 
     public function getDebugInfo()
     {
-        return array (  62 => 14,  53 => 12,  49 => 11,  37 => 1,);
+        return array (  64 => 14,  53 => 12,  49 => 11,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<header>
     <div id=\"first\" class=\"d-flex justify-content-between align-items-center\">
-        <div id=\"logo\"><img src=\"media/computer.png\" alt=\"Logo\" width=\"256\" height=\"256\"></div>
+        <div id=\"logo\"><img src=\"media/logo.png\" alt=\"Logo\" width=\"300\" height=\"119\"></div>
         <button id=\"addPost\" class=\"btn\">Poster une annonce</button>
     </div>
     <div id=\"secondary\" class=\"container d-flex justify-content-around\">
@@ -93,7 +95,7 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
             <button type=\"button\" id=\"listCategorie\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
             <div class=\"dropdown-menu dropdown-menu-right\">
               {% for category in categories %}
-              <button class=\"dropdown-item\" type=\"button\">{{ category.name }}</button>
+              <button class=\"dropdown-item\" type=\"button\" value=\"{{ category.name }}\">{{ category.name }}</button>
               {% endfor %}
             </div>
           </div>

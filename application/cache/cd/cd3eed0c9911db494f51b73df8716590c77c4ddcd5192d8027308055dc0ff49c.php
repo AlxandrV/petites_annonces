@@ -34,7 +34,7 @@ class __TwigTemplate_e7bc217f480c34514f1fca6f69eb0963e14a9dff5f34696e59fe90b2b2a
     {
         $macros = $this->macros;
         // line 1
-        echo "<section class=\"container d-flex flex-wrap justify-content-between\">
+        echo "<section class=\"container d-flex flex-wrap\">
 
 </section>
 
@@ -53,7 +53,7 @@ class __TwigTemplate_e7bc217f480c34514f1fca6f69eb0963e14a9dff5f34696e59fe90b2b2a
 
     public function getSourceContext()
     {
-        return new Source("<section class=\"container d-flex flex-wrap justify-content-between\">
+        return new Source("<section class=\"container d-flex flex-wrap\">
 
 </section>
 
