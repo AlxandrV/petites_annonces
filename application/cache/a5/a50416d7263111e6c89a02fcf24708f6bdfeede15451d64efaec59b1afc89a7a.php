@@ -39,44 +39,54 @@ class __TwigTemplate_d3c84b66090aaa3c5f49d2ceb46c529884d2c1bad77e8afae6d0954d49d
 <div id=\"contentModal\">
     <div>
         <div>
-            <p>";
-        // line 6
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "category_name", [], "any", false, false, false, 6), "html", null, true);
+            <div>
+                <p>";
+        // line 7
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "category_name", [], "any", false, false, false, 7), "html", null, true);
         echo "</p>
+                <a href=\"/ajax-pdf?unique_id=";
+        // line 8
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "unique_id", [], "any", false, false, false, 8), "html", null, true);
+        echo "\" target=\"_blank\" rel=\"noopener noreferrer\">Télécharger l'annonce en PDF</a>
+            </div>
             <span></span>
             <p>Nom : ";
-        // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_name", [], "any", false, false, false, 8), "html", null, true);
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_name", [], "any", false, false, false, 11), "html", null, true);
         echo "</p>
             <p>Prénom : ";
-        // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_firstname", [], "any", false, false, false, 9), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_firstname", [], "any", false, false, false, 12), "html", null, true);
         echo "</p>
-            <p>Adresse mail : ";
-        // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_mail", [], "any", false, false, false, 10), "html", null, true);
-        echo "</p>
-            <p>Téléphone : ";
-        // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_phone", [], "any", false, false, false, 11), "html", null, true);
-        echo "</p>
+            <p>Adresse mail : <a href=\"mailto:";
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_mail", [], "any", false, false, false, 13), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_mail", [], "any", false, false, false, 13), "html", null, true);
+        echo "</a></p>
+            <p>Téléphone : <a href=\"tel:";
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_phone", [], "any", false, false, false, 14), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "user_phone", [], "any", false, false, false, 14), "html", null, true);
+        echo "</a></p>
             <span></span>
         </div>
         <div>
             <img src=\"media/user_uploads/";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "picture", [], "any", false, false, false, 15), "html", null, true);
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "picture", [], "any", false, false, false, 18), "html", null, true);
         echo "\" alt=\"image d'illustration\">
         </div>
     </div>
     <div>
         <h5>";
-        // line 19
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "title", [], "any", false, false, false, 19), "html", null, true);
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "title", [], "any", false, false, false, 22), "html", null, true);
         echo "</h5>
         <p>";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "description", [], "any", false, false, false, 20), "html", null, true);
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["posts"] ?? null), "description", [], "any", false, false, false, 23), "html", null, true);
         echo "</p>
     </div>
 </div>";
@@ -94,7 +104,7 @@ class __TwigTemplate_d3c84b66090aaa3c5f49d2ceb46c529884d2c1bad77e8afae6d0954d49d
 
     public function getDebugInfo()
     {
-        return array (  79 => 20,  75 => 19,  68 => 15,  61 => 11,  57 => 10,  53 => 9,  49 => 8,  44 => 6,  37 => 1,);
+        return array (  89 => 23,  85 => 22,  78 => 18,  69 => 14,  63 => 13,  59 => 12,  55 => 11,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -104,12 +114,15 @@ class __TwigTemplate_d3c84b66090aaa3c5f49d2ceb46c529884d2c1bad77e8afae6d0954d49d
 <div id=\"contentModal\">
     <div>
         <div>
-            <p>{{posts.category_name}}</p>
+            <div>
+                <p>{{posts.category_name}}</p>
+                <a href=\"/ajax-pdf?unique_id={{ posts.unique_id }}\" target=\"_blank\" rel=\"noopener noreferrer\">Télécharger l'annonce en PDF</a>
+            </div>
             <span></span>
             <p>Nom : {{posts.user_name}}</p>
             <p>Prénom : {{posts.user_firstname}}</p>
-            <p>Adresse mail : {{posts.user_mail}}</p>
-            <p>Téléphone : {{posts.user_phone}}</p>
+            <p>Adresse mail : <a href=\"mailto:{{ posts.user_mail }}\">{{posts.user_mail}}</a></p>
+            <p>Téléphone : <a href=\"tel:{{ posts.user_phone }}\">{{posts.user_phone}}</a></p>
             <span></span>
         </div>
         <div>

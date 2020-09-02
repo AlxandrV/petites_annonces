@@ -74,7 +74,7 @@ class PostList{
                             cat.name as category_name
                         FROM post as p
                         INNER JOIN category cat ON p.category_id = cat.ID
-                        WHERE p.title LIKE :search AND p.is_validated = 0
+                        WHERE p.title LIKE :search AND p.is_validated = 1
                         ORDER BY p.date_creation
                         LIMIT :maxPosts OFFSET :pageStart",
             array(

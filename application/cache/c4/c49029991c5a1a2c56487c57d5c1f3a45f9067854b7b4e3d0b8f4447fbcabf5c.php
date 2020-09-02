@@ -36,7 +36,9 @@ class __TwigTemplate_3c2bf998d7ca25847ffef07c5e78e8f3a97aad12df52e53a0a067b56719
         // line 1
         echo "<section class=\"container d-flex flex-wrap justify-content-between\">
 
-</section>";
+</section>
+
+<button id=\"loadMore\" class=\"btn btn-light\">Charger les 10 suivants</button>";
     }
 
     public function getTemplateName()
@@ -53,6 +55,8 @@ class __TwigTemplate_3c2bf998d7ca25847ffef07c5e78e8f3a97aad12df52e53a0a067b56719
     {
         return new Source("<section class=\"container d-flex flex-wrap justify-content-between\">
 
-</section>", "content.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\content.html.twig");
+</section>
+
+<button id=\"loadMore\" class=\"btn btn-light\">Charger les 10 suivants</button>", "content.html.twig", "C:\\xampp\\htdocs\\annonces\\application\\templates\\content.html.twig");
     }
 }
