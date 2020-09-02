@@ -57,9 +57,17 @@ $router->map('GET', '/del-[:unique_id]', function ($unique_id) {
 });
 
 //DEBUG PAGE_________________________________________
-$router->map('GET', '/debug', function () {
+$router->map('GET', '/debug-[:unique_id]', function ($unique_id) {
     //debug content
     // require_once('Cron.php');
+    //request post data
+    $showPost = new ShowPost($unique_id);
+    //render template
+    $twig = new Twig('delete.html.twig');
+    $twig->render([
+            'post' => $showPost->data[0],
+        ]);
+
 });
 //___________________________________________________
 
