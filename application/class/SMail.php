@@ -16,7 +16,8 @@ class SMail
 
         try {
             //Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER; // Enable verbose debug output
+            // $mail->SMTPDebug = SMTP::DEBUG_SERVER; // Enable verbose debug output
+            $mail->SMTPDebug = false; // Enable verbose debug output
             $mail->isSMTP(); // Send using SMTP
             $mail->Host = 'smtp.mail.com'; // Set the SMTP server to send through
             $mail->SMTPAuth = true; // Enable SMTP authentication
@@ -42,20 +43,21 @@ class SMail
                 $link = $domain . '/valid-' . $code;
                 $mail->Subject = 'Confirmez votre annonce';
                 $mail->Body ='<p>Bonjour '.$prenom.' !</p><a href="'.$link .'">Cliquez sur ce lien pour confirmer votre annonce.</a>';
+                // $mail->$body = file_get_contents('email.html');
             } elseif ($type === 'delete') {
                 $link = $domain . '/del-' . $code;
                 $mail->Subject = 'Votre annonce a été publiée';
                 $mail->Body ='<p>Bonjour '.$prenom.' !</p><a href="'.$link .'">Cliquez sur ce lien pour supprimer votre annonce.</a>';
+                // $mail->$body = file_get_contents('email.html');
             } else {
                 echo 'Wrong Type Parameter';
                 return;
             }
 
-            $mail->AltBody =
-                'This is the body in plain text for non-HTML mail clients';
+            // $mail->AltBody =
+            //     'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
-            echo 'Message has been sent';
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
