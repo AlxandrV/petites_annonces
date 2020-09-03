@@ -41,22 +41,22 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
             <div class=\"userDescription\">
                 <div class=\"form-group\">
                     <label for=\"name\">Nom</label>
-                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"user_name\" placeholder=\"Mes couilles\" required>
+                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"user_name\" placeholder=\"Nom\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"firstName\">Prénom</label>
-                    <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"user_firstname\" placeholder=\"En ski\" required>
+                    <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"user_firstname\" placeholder=\"Prénom\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"email\">Adresse mail</label>
-                    <input type=\"email\" class=\"form-control\" id=\"email\" name=\"user_mail\" placeholder=\"mescouillesenski@example.com\" required>
+                    <input type=\"email\" class=\"form-control\" id=\"email\" name=\"user_mail\" placeholder=\"exemple@mail.com\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"phone\">Numéro de téléphone</label>
-                    <input type=\"tel\" class=\"form-control\" id=\"phone\" name=\"user_phone\" placeholder=\"0164346007\" required>
+                    <input type=\"tel\" class=\"form-control\" id=\"phone\" name=\"user_phone\" placeholder=\"0123456789\" required>
                 </div>
             </div>
     
@@ -88,7 +88,7 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
         
                         <div class=\"form-group\">
                             <label for=\"title\">Titre de votre annonce</label>
-                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" placeholder=\"TItre de l'annoce\" required>
+                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" placeholder=\"TItre\" required>
                         </div>
                     </div>
 
@@ -140,22 +140,22 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
             <div class=\"userDescription\">
                 <div class=\"form-group\">
                     <label for=\"name\">Nom</label>
-                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"user_name\" placeholder=\"Mes couilles\" required>
+                    <input type=\"text\" class=\"form-control\" id=\"name\" name=\"user_name\" placeholder=\"Nom\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"firstName\">Prénom</label>
-                    <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"user_firstname\" placeholder=\"En ski\" required>
+                    <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"user_firstname\" placeholder=\"Prénom\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"email\">Adresse mail</label>
-                    <input type=\"email\" class=\"form-control\" id=\"email\" name=\"user_mail\" placeholder=\"mescouillesenski@example.com\" required>
+                    <input type=\"email\" class=\"form-control\" id=\"email\" name=\"user_mail\" placeholder=\"exemple@mail.com\" required>
                 </div>
     
                 <div class=\"form-group\">
                     <label for=\"phone\">Numéro de téléphone</label>
-                    <input type=\"tel\" class=\"form-control\" id=\"phone\" name=\"user_phone\" placeholder=\"0164346007\" required>
+                    <input type=\"tel\" class=\"form-control\" id=\"phone\" name=\"user_phone\" placeholder=\"0123456789\" required>
                 </div>
             </div>
     
@@ -173,7 +173,7 @@ class __TwigTemplate_a1ae9763e4958acd21ab90bddfbf5087774ae40418d2cd37752b890e6cc
         
                         <div class=\"form-group\">
                             <label for=\"title\">Titre de votre annonce</label>
-                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" placeholder=\"TItre de l'annoce\" required>
+                            <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" placeholder=\"TItre\" required>
                         </div>
                     </div>
 

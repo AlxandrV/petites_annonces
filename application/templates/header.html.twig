@@ -8,6 +8,7 @@
         <div class="btn-group">
             <button type="button" id="listCategorie" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégorie</button>
             <div class="dropdown-menu dropdown-menu-right">
+              <button class="dropdown-item" type="button" value="">Tout</button>
               {% for category in categories %}
               <button class="dropdown-item" type="button" value="{{ category.name }}">{{ category.name }}</button>
               {% endfor %}

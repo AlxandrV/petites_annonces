@@ -44,23 +44,24 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
         <div class=\"btn-group\">
             <button type=\"button\" id=\"listCategorie\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
             <div class=\"dropdown-menu dropdown-menu-right\">
+              <button class=\"dropdown-item\" type=\"button\" value=\"\">Tout</button>
               ";
-        // line 11
+        // line 12
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 12
+            // line 13
             echo "              <button class=\"dropdown-item\" type=\"button\" value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 12), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 13), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 12), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 13), "html", null, true);
             echo "</button>
               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
+        // line 15
         echo "            </div>
           </div>
     </div>
@@ -79,7 +80,7 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
 
     public function getDebugInfo()
     {
-        return array (  64 => 14,  53 => 12,  49 => 11,  37 => 1,);
+        return array (  65 => 15,  54 => 13,  50 => 12,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -94,6 +95,7 @@ class __TwigTemplate_894c3fcc387ac53293bd43a523a6e17fe0f49030357e050a5998f06746d
         <div class=\"btn-group\">
             <button type=\"button\" id=\"listCategorie\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
             <div class=\"dropdown-menu dropdown-menu-right\">
+              <button class=\"dropdown-item\" type=\"button\" value=\"\">Tout</button>
               {% for category in categories %}
               <button class=\"dropdown-item\" type=\"button\" value=\"{{ category.name }}\">{{ category.name }}</button>
               {% endfor %}

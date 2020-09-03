@@ -1,13 +1,13 @@
 // Compte initial de page pour l'affichage de Post ________________________________
 let nbrPage = 10;
-let search = "";
+let category = "";
 
 // fonction AJAX des annonces ___________________________________________
 const content = document.getElementsByTagName('SECTION');
 
 function loadProducts(){
     let formData = new FormData();
-    formData.append('category', search);
+    formData.append('category', category);
 
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'ajax-postList', true);
@@ -111,7 +111,7 @@ buttonLoad.addEventListener('click', () => {
     let xhr = new XMLHttpRequest();
 
     let data = new FormData();
-    data.append('search', search);
+    data.append('search', searchBar);
     data.append('pageStart', nbrPage);
 
     xhr.open('POST', 'ajax-postList', true);
@@ -163,13 +163,33 @@ buttonLoad.addEventListener('click', () => {
 
 // Affichage par catégorie ____________________________________________________
 const inputCategorie = document.querySelector('#listCategorie').nextElementSibling.children;
-console.log(inputCategorie);
 
 Array.from(inputCategorie).forEach(function (element) {
     element.addEventListener('click', () => {
-        search = element.value;
+        document.getElementById('search').value = "";
+        category = element.value;
         loadProducts();
         
         nbrPage = 10;
     });
+});
+
+// Barre de recherche ___________________________________________________________
+let inputSearch = document.getElementById('search');
+
+inputSearch.addEventListener('input', () => {
+    let xhr = new XMLHttpRequest();
+    
+    let searchBar = document.getElementById('search').value;
+    let data = new FormData();
+    data.append('search', searchBar);
+
+    xhr.open('POST', 'ajax-postList', true);
+    xhr.send(data);
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            content[0].innerHTML = xhr.responseText;
+        }
+    }
 });
