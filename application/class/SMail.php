@@ -42,10 +42,12 @@ class SMail
                 $link = $domain . '/valid-' . $code;
                 $mail->Subject = 'Confirmez votre annonce';
                 $mail->Body ='<p>Bonjour '.$prenom.' !</p><a href="'.$link .'">Cliquez sur ce lien pour confirmer votre annonce.</a>';
+                // $mail->$body = file_get_contents('email.html');
             } elseif ($type === 'delete') {
                 $link = $domain . '/del-' . $code;
                 $mail->Subject = 'Votre annonce a été publiée';
                 $mail->Body ='<p>Bonjour '.$prenom.' !</p><a href="'.$link .'">Cliquez sur ce lien pour supprimer votre annonce.</a>';
+                // $mail->$body = file_get_contents('email.html');
             } else {
                 echo 'Wrong Type Parameter';
                 return;

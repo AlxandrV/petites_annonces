@@ -50,7 +50,9 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 12
-            echo "              <button class=\"dropdown-item\" type=\"button\">";
+            echo "              <button class=\"dropdown-item\" type=\"button\" value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 12), "html", null, true);
+            echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 12), "html", null, true);
             echo "</button>
               ";
@@ -77,7 +79,7 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
 
     public function getDebugInfo()
     {
-        return array (  62 => 14,  53 => 12,  49 => 11,  37 => 1,);
+        return array (  64 => 14,  53 => 12,  49 => 11,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -93,7 +95,7 @@ class __TwigTemplate_04221abde1a545802dcbf1718d8ddd82b6eb2df295393a932238b33d137
             <button type=\"button\" id=\"listCategorie\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Catégorie</button>
             <div class=\"dropdown-menu dropdown-menu-right\">
               {% for category in categories %}
-              <button class=\"dropdown-item\" type=\"button\">{{ category.name }}</button>
+              <button class=\"dropdown-item\" type=\"button\" value=\"{{ category.name }}\">{{ category.name }}</button>
               {% endfor %}
             </div>
           </div>
