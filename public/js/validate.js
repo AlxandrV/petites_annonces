@@ -31,7 +31,7 @@ formValidate.addEventListener('submit', (e) => {
             const reponse = document.querySelector('.popUp > DIV > P');
             console.log(xhr.responseText);
             if(xhr.responseText == '"OK"'){
-                reponse.innerHTML = 'Annonce confirmé<br/><a href="/">Retour à l\'accueil</a>'
+                reponse.innerHTML = 'Annonce confirmée<br/><a href="/">Retour à l\'accueil</a>'
             } else{
                 reponse.innerHTML = 'Une erreur s\'est produite, merci de réessayer plus tard<br/><a href="/">Retour à l\'accueil</a>'
             }
