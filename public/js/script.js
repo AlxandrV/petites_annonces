@@ -111,7 +111,7 @@ buttonLoad.addEventListener('click', () => {
     let xhr = new XMLHttpRequest();
 
     let data = new FormData();
-    data.append('search', searchBar);
+    // data.append('search', searchBar);
     data.append('pageStart', nbrPage);
 
     xhr.open('POST', 'ajax-postList', true);

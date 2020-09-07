@@ -9,7 +9,7 @@ class SMail
 {
     function __construct($type, $mailto, $prenom, $nom, $code)
     {
-        $domain = 'http://localhost';
+        $domain = 'http://alexandrev.promo-39.codeur.online/petites_annonces';
 
         // Instantiation and passing `true` enables exceptions
         $mail = new PHPMailer(true);

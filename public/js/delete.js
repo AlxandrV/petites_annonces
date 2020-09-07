@@ -23,7 +23,7 @@ buttonDelete.addEventListener('click', () => {
         
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                form.innerHTML = '<p>Annonce Supprimer</p>';
+                form.innerHTML = '<p>Annonce Supprimer</p><br><p><a href="/">Retour à l\'accueil</a></p>';
             }
         };
     })

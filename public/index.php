@@ -1,6 +1,9 @@
 <?php
 require_once '../vendor/autoload.php';
 
+// define('BASE_PATH','/petites_annonces/public/') ;
+// define('SERVER_URI', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] .' :' . $_SERVER['SERVER_PORT'] . BASE_PATH) ;
+
 use App\Categories;
 use App\ShowPost;
 use App\Twig;
@@ -20,6 +23,7 @@ $router->map('GET', '/', function () {
     $twig = new Twig('base.html.twig');
     $twig->render([
             'categories' => $categories->data,
+            // 'SERVER_URI' => SERVER_URI,
         ]);
 });
 
@@ -109,6 +113,9 @@ $router->map('GET', '/[*]', function () {
 // Launch Routing
 $match = $router->match();
 
-if ($match !== null) {
-    call_user_func_array($match['target'], $match['params']);
+if( is_array($match) && is_callable( $match['target'] ) ) {
+    call_user_func_array( $match['target'], $match['params'] );
+} else {
+    // no route was matched
+    header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
 }
