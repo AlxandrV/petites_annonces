@@ -98,8 +98,16 @@ form.addEventListener('submit', (e) => {
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            modalAdd.classList.remove('active');
-            form.reset();
+            const confirmMail = document.getElementsByClassName('confirmMail');
+            confirmMail[0].classList.add('active');
+
+            const popUpMail = document.getElementById('popUpMail');
+            popUpMail.addEventListener('click', () => {
+                confirmMail[0].classList.remove('active');
+                modalAdd.classList.remove('active');
+                form.reset();
+
+            });
         }
     };
 });
@@ -111,7 +119,10 @@ buttonLoad.addEventListener('click', () => {
     let xhr = new XMLHttpRequest();
 
     let data = new FormData();
-    // data.append('search', searchBar);
+
+    let searchBar = document.getElementById('search').value;
+
+    data.append('search', searchBar);
     data.append('pageStart', nbrPage);
 
     xhr.open('POST', 'ajax-postList', true);
@@ -193,3 +204,10 @@ inputSearch.addEventListener('input', () => {
         }
     }
 });
+
+// Captcha
+function onSubmit(token) {
+	var onloadCallback = function() {
+		alert("grecaptcha is ready!");
+	  };
+}

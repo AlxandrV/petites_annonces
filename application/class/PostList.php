@@ -44,7 +44,7 @@ class PostList{
                             FROM post as p
                             INNER JOIN category cat ON p.category_id = cat.ID
                             WHERE p.title LIKE :search AND p.is_validated = 1 AND cat.name = :category
-                            ORDER BY p.id
+                            ORDER BY p.id DESC
                             LIMIT :maxPosts OFFSET :pageStart",
                 array(
                     array('search',$search,\PDO::PARAM_STR),
@@ -75,7 +75,7 @@ class PostList{
                         FROM post as p
                         INNER JOIN category cat ON p.category_id = cat.ID
                         WHERE p.title LIKE :search AND p.is_validated = 1
-                        ORDER BY p.id
+                        ORDER BY p.id DESC
                         LIMIT :maxPosts OFFSET :pageStart",
             array(
                 array('search',$search,\PDO::PARAM_STR),

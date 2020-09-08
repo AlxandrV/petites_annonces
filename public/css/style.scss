@@ -507,6 +507,32 @@ body{
         transform: translateX(-50%);
         margin-bottom: 20px;
     }
+
+    .confirmMail{
+        position: fixed;
+        left: 100%;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .5);
+        transition: transform 1s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 1s ease-in-out;
+
+        &.active{
+            transform: translateX(-100%);
+        }
+
+        div{
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+    }
+
 }
 
 // Media QUeries _________________________________________________________
