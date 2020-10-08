@@ -91,4 +91,19 @@ class PostList{
                     'posts' => $req,
                 ]);
     }
+
+    public static function count(){
+        $base = new Connexion();
+        
+        $req = $base->q(
+            "SELECT  COUNT(id) FROM post",
+            array(
+                array('search',$search,\PDO::PARAM_STR),
+                array('pageStart',$pageStart,\PDO::PARAM_INT),
+                array('maxPosts',$maxPosts,\PDO::PARAM_INT),
+                array('category',$category,\PDO::PARAM_STR),
+                )
+            );
+
+    }
 }
